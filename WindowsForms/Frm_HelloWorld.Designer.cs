@@ -30,6 +30,7 @@
         {
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.Btn_Sair = new System.Windows.Forms.Button();
+            this.Btn_ModificaLabel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Titulo
@@ -54,12 +55,24 @@
             this.Btn_Sair.UseVisualStyleBackColor = true;
             this.Btn_Sair.Click += new System.EventHandler(this.Btn_Sair_Click);
             // 
+            // Btn_ModificaLabel
+            // 
+            this.Btn_ModificaLabel.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ModificaLabel.Location = new System.Drawing.Point(26, 54);
+            this.Btn_ModificaLabel.Name = "Btn_ModificaLabel";
+            this.Btn_ModificaLabel.Size = new System.Drawing.Size(240, 23);
+            this.Btn_ModificaLabel.TabIndex = 2;
+            this.Btn_ModificaLabel.Text = "Modifica Texto Label";
+            this.Btn_ModificaLabel.UseVisualStyleBackColor = true;
+            this.Btn_ModificaLabel.Click += new System.EventHandler(this.Btn_ModificaLabel_Click);
+            // 
             // Frm_HelloWorld
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(550, 374);
+            this.Controls.Add(this.Btn_ModificaLabel);
             this.Controls.Add(this.Btn_Sair);
             this.Controls.Add(this.lbl_Titulo);
             this.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -76,6 +89,7 @@
 
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.Button Btn_Sair;
+        private System.Windows.Forms.Button Btn_ModificaLabel;
     }
 }
 

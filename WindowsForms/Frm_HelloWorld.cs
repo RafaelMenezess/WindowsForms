@@ -13,5 +13,10 @@ namespace WindowsForms
         {
             Application.Exit();
         }
+
+        private void Btn_ModificaLabel_Click(object sender, System.EventArgs e)
+        {
+            lbl_Titulo.Text = "Label Modificado";
+        }
     }
 }
