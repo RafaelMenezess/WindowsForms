@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.Msk_CPF = new System.Windows.Forms.MaskedTextBox();
-            this.Lbl_Resultado = new System.Windows.Forms.Label();
             this.Btn_Reset = new System.Windows.Forms.Button();
             this.Btn_Valida = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -42,15 +41,6 @@
             this.Msk_CPF.Size = new System.Drawing.Size(218, 20);
             this.Msk_CPF.TabIndex = 0;
             // 
-            // Lbl_Resultado
-            // 
-            this.Lbl_Resultado.AutoSize = true;
-            this.Lbl_Resultado.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Resultado.Location = new System.Drawing.Point(12, 90);
-            this.Lbl_Resultado.Name = "Lbl_Resultado";
-            this.Lbl_Resultado.Size = new System.Drawing.Size(0, 20);
-            this.Lbl_Resultado.TabIndex = 1;
-            // 
             // Btn_Reset
             // 
             this.Btn_Reset.Location = new System.Drawing.Point(245, 42);
@@ -59,7 +49,6 @@
             this.Btn_Reset.TabIndex = 2;
             this.Btn_Reset.Text = "Limpa";
             this.Btn_Reset.UseVisualStyleBackColor = true;
-
             // 
             // Btn_Valida
             // 
@@ -70,14 +59,13 @@
             this.Btn_Valida.Text = "Valida";
             this.Btn_Valida.UseVisualStyleBackColor = true;
             // 
-            // Frm_ValidaCPF
+            // Frm_ValidaCPF2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 154);
             this.Controls.Add(this.Btn_Valida);
             this.Controls.Add(this.Btn_Reset);
-            this.Controls.Add(this.Lbl_Resultado);
             this.Controls.Add(this.Msk_CPF);
             this.Name = "Frm_ValidaCPF2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -90,7 +78,6 @@
         #endregion
 
         private System.Windows.Forms.MaskedTextBox Msk_CPF;
-        private System.Windows.Forms.Label Lbl_Resultado;
         private System.Windows.Forms.Button Btn_Reset;
         private System.Windows.Forms.Button Btn_Valida;
     }
