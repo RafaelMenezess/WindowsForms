@@ -13,7 +13,7 @@ namespace WindowsForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_DesmonstracaoKey());
+            Application.Run(new Frm_ValidaSenha());
         }
     }
 }
