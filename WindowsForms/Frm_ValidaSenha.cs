@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -6,6 +7,7 @@ namespace WindowsForms
 {
     public partial class Frm_ValidaSenha : Form
     {
+        bool verSenhaTxt = false;
         public Frm_ValidaSenha()
         {
             InitializeComponent();
@@ -23,6 +25,38 @@ namespace WindowsForms
             ChecaForcaSenha.ForcaDaSenha forca;
             forca = verifica.GetForcaDaSenha(Txt_Senha.Text);
             Lbl_Resultado.Text = forca.ToString();
+
+            if (Lbl_Resultado.Text == "Inaceitavel" || Lbl_Resultado.Text == "Fraca")
+            {
+                Lbl_Resultado.ForeColor = Color.Red;
+            }
+            if (Lbl_Resultado.Text == "Aceitavel")
+            {
+                Lbl_Resultado.ForeColor = Color.Blue;
+            }
+            if (Lbl_Resultado.Text == "Forte" || Lbl_Resultado.Text == "Segura")
+            {
+                Lbl_Resultado.ForeColor = Color.Green;
+            }
+        }
+
+        private void Btn_VerSenha_Click(object sender, EventArgs e)
+        {
+            if (verSenhaTxt == false)
+            {
+                Txt_Senha.PasswordChar = '\0';
+                verSenhaTxt = true;
+                Btn_VerSenha.Text = "Esconder Senha";
+            }
+            else
+            {
+                Txt_Senha.PasswordChar = '*';
+                verSenhaTxt = false;
+                Btn_VerSenha.Text = "Ver Senha";
+
+            }
+
+            
         }
     }
 
