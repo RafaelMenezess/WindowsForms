@@ -16,7 +16,7 @@ namespace WindowsForms
 
         private void Btn_ModificaLabel_Click(object sender, System.EventArgs e)
         {
-            lbl_Titulo.Text = "Label Modificado";
+            lbl_Titulo.Text = Txt_ConteudoLabel.Text;
         }
     }
 }
