@@ -49,6 +49,7 @@
             this.Btn_Reset.TabIndex = 2;
             this.Btn_Reset.Text = "Limpa";
             this.Btn_Reset.UseVisualStyleBackColor = true;
+            this.Btn_Reset.Click += new System.EventHandler(this.Btn_Reset_Click);
             // 
             // Btn_Valida
             // 
@@ -58,6 +59,7 @@
             this.Btn_Valida.TabIndex = 3;
             this.Btn_Valida.Text = "Valida";
             this.Btn_Valida.UseVisualStyleBackColor = true;
+            this.Btn_Valida.Click += new System.EventHandler(this.Btn_Valida_Click);
             // 
             // Frm_ValidaCPF2
             // 
