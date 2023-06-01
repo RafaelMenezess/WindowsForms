@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsForms
@@ -24,20 +17,32 @@ namespace WindowsForms
 
         private void Btn_Valida_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Você deseja realmente validar o CPF?", "Mensagem de validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                bool validaCpf = false;
-                validaCpf = Cls_Uteis.Valida(Msk_CPF.Text);
+            string vConteudo = Msk_CPF.Text;
+            vConteudo = vConteudo.Replace(".", "").Replace("-", "");
+            vConteudo = vConteudo.Trim();
 
-                if (validaCpf == true)
+            if (vConteudo == "")
+            {
+                MessageBox.Show("Você deve digitar um CPF", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Você deseja realmente validar o CPF?", "Mensagem de validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("CPF Válido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("CPF Inválido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    bool validaCpf = false;
+                    validaCpf = Cls_Uteis.Valida(Msk_CPF.Text);
+
+                    if (validaCpf == true)
+                    {
+                        MessageBox.Show("CPF Válido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("CPF Inválido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
+
         }
     }
 }
