@@ -24,16 +24,19 @@ namespace WindowsForms
 
         private void Btn_Valida_Click(object sender, EventArgs e)
         {
-            bool validaCpf = false;
-            validaCpf = Cls_Uteis.Valida(Msk_CPF.Text);
+            if (MessageBox.Show("Você deseja realmente validar o CPF?", "Mensagem de validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bool validaCpf = false;
+                validaCpf = Cls_Uteis.Valida(Msk_CPF.Text);
 
-            if (validaCpf == true)
-            {
-                MessageBox.Show("CPF Válido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("CPF Inválido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (validaCpf == true)
+                {
+                    MessageBox.Show("CPF Válido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("CPF Inválido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
