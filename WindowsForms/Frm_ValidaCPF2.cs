@@ -27,22 +27,28 @@ namespace WindowsForms
             }
             else
             {
-                if (MessageBox.Show("Você deseja realmente validar o CPF?", "Mensagem de validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (vConteudo.Length != 11)
                 {
-                    bool validaCpf = false;
-                    validaCpf = Cls_Uteis.Valida(Msk_CPF.Text);
+                    MessageBox.Show("CPF deve conter 11 digitos", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (MessageBox.Show("Você deseja realmente validar o CPF?", "Mensagem de validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        bool validaCpf = false;
+                        validaCpf = Cls_Uteis.Valida(Msk_CPF.Text);
 
-                    if (validaCpf == true)
-                    {
-                        MessageBox.Show("CPF Válido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("CPF Inválido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (validaCpf == true)
+                        {
+                            MessageBox.Show("CPF Válido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("CPF Inválido", "Mensagem de validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
-
         }
     }
 }
