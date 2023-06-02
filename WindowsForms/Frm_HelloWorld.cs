@@ -11,7 +11,7 @@ namespace WindowsForms
 
         private void Btn_Sair_Click(object sender, System.EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void Btn_ModificaLabel_Click(object sender, System.EventArgs e)

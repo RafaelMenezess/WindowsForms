@@ -71,7 +71,7 @@
             this.Controls.Add(this.Msk_CPF);
             this.Name = "Frm_ValidaCPF2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Validação CPF";
+            this.Text = "Validação CPF 2";
             this.ResumeLayout(false);
             this.PerformLayout();
 
