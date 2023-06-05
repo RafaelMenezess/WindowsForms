@@ -1,4 +1,4 @@
-﻿namespace WindowsForms
+﻿namespace CursoWindowsFormsBiblioteca
 {
     public class Cls_Uteis
     {
