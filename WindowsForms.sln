@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsForms", "WindowsForms\WindowsForms.csproj", "{17B84D3B-3741-4A9F-A810-16B5EA6A3669}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoWindowsFormsBiblioteca", "CursoWindownsFormsBiblioteca\CursoWindowsFormsBiblioteca.csproj", "{CA06AFAD-1785-4A35-94D0-11C8F4CC67A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsBiblioteca", "CursoWindownsFormsBiblioteca\WindowsFormsBiblioteca.csproj", "{CA06AFAD-1785-4A35-94D0-11C8F4CC67A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

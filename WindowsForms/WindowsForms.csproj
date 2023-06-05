@@ -143,9 +143,9 @@
     <Content Include="Frm_Principal.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CursoWindownsFormsBiblioteca\CursoWindowsFormsBiblioteca.csproj">
+    <ProjectReference Include="..\CursoWindownsFormsBiblioteca\WindowsFormsBiblioteca.csproj">
       <Project>{ca06afad-1785-4a35-94d0-11c8f4cc67a3}</Project>
-      <Name>CursoWindowsFormsBiblioteca</Name>
+      <Name>WindowsFormsBiblioteca</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
