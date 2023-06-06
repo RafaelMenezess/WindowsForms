@@ -39,6 +39,7 @@
             this.validaCPF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.valídaSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,37 +70,43 @@
             this.helloWorldToolStripMenuItem,
             this.mascaraToolStripMenuItem,
             this.validaCPFToolStripMenuItem,
-            this.validaCPF2ToolStripMenuItem});
+            this.validaCPF2ToolStripMenuItem,
+            this.valídaSenhaToolStripMenuItem});
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
             this.novoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoToolStripMenuItem.Text = "Novo";
             // 
             // demonstraçãoKeyToolStripMenuItem
             // 
+            this.demonstraçãoKeyToolStripMenuItem.Image = global::WindowsForms.Properties.Resources.Frm_DemonstracaoKey;
             this.demonstraçãoKeyToolStripMenuItem.Name = "demonstraçãoKeyToolStripMenuItem";
             this.demonstraçãoKeyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.demonstraçãoKeyToolStripMenuItem.Text = "Demonstração Key";
             // 
             // helloWorldToolStripMenuItem
             // 
+            this.helloWorldToolStripMenuItem.Image = global::WindowsForms.Properties.Resources.Frm_HelloWorld;
             this.helloWorldToolStripMenuItem.Name = "helloWorldToolStripMenuItem";
             this.helloWorldToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.helloWorldToolStripMenuItem.Text = "Hello World";
             // 
             // mascaraToolStripMenuItem
             // 
+            this.mascaraToolStripMenuItem.Image = global::WindowsForms.Properties.Resources.Frm_Mascara;
             this.mascaraToolStripMenuItem.Name = "mascaraToolStripMenuItem";
             this.mascaraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mascaraToolStripMenuItem.Text = "Mascara";
             // 
             // validaCPFToolStripMenuItem
             // 
+            this.validaCPFToolStripMenuItem.Image = global::WindowsForms.Properties.Resources.Frm_ValidaCPF;
             this.validaCPFToolStripMenuItem.Name = "validaCPFToolStripMenuItem";
             this.validaCPFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.validaCPFToolStripMenuItem.Text = "Valída CPF";
             // 
             // validaCPF2ToolStripMenuItem
             // 
+            this.validaCPF2ToolStripMenuItem.Image = global::WindowsForms.Properties.Resources.Frm_ValidaCPF2;
             this.validaCPF2ToolStripMenuItem.Name = "validaCPF2ToolStripMenuItem";
             this.validaCPF2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.validaCPF2ToolStripMenuItem.Text = "Valída CPF 2";
@@ -115,6 +122,13 @@
             this.windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
             this.windowsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.windowsToolStripMenuItem.Text = "Windows";
+            // 
+            // valídaSenhaToolStripMenuItem
+            // 
+            this.valídaSenhaToolStripMenuItem.Image = global::WindowsForms.Properties.Resources.Frm_ValidaSenha;
+            this.valídaSenhaToolStripMenuItem.Name = "valídaSenhaToolStripMenuItem";
+            this.valídaSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.valídaSenhaToolStripMenuItem.Text = "Valída Senha";
             // 
             // Frm_Principal_Menu
             // 
@@ -146,5 +160,6 @@
         private System.Windows.Forms.ToolStripMenuItem validaCPF2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem valídaSenhaToolStripMenuItem;
     }
 }
