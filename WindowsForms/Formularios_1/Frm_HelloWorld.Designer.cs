@@ -47,6 +47,7 @@
             // 
             // Btn_Sair
             // 
+            this.Btn_Sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_Sair.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Sair.Location = new System.Drawing.Point(388, 339);
             this.Btn_Sair.Margin = new System.Windows.Forms.Padding(2);
@@ -59,6 +60,8 @@
             // 
             // Btn_ModificaLabel
             // 
+            this.Btn_ModificaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_ModificaLabel.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ModificaLabel.Location = new System.Drawing.Point(25, 54);
             this.Btn_ModificaLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -71,6 +74,8 @@
             // 
             // Txt_ConteudoLabel
             // 
+            this.Txt_ConteudoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_ConteudoLabel.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_ConteudoLabel.Location = new System.Drawing.Point(25, 84);
             this.Txt_ConteudoLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
