@@ -1,6 +1,6 @@
 ﻿namespace WindowsForms
 {
-    partial class Frm_User_Control
+    partial class Frm_HelloWorld_UC
     {
         /// <summary> 
         /// Required designer variable.

@@ -1,16 +1,15 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace WindowsForms
 {
-    public partial class Frm_Mascara : Form
+    public partial class Frm_Mascara_UC : UserControl
     {
-        public Frm_Mascara()
+        public Frm_Mascara_UC()
         {
             InitializeComponent();
         }
 
-        private void Btn_Hora_Click(object sender, EventArgs e)
+        private void Btn_Hora_Click(object sender, System.EventArgs e)
         {
             Msk_TextBox.UseSystemPasswordChar = false;
             Lbl_Conteudo.Text = string.Empty;
@@ -20,12 +19,12 @@ namespace WindowsForms
             Msk_TextBox.Focus();
         }
 
-        private void Btn_VerConteudo_Click(object sender, EventArgs e)
+        private void Btn_VerConteudo_Click(object sender, System.EventArgs e)
         {
             Lbl_Conteudo.Text = Msk_TextBox.Text;
         }
 
-        private void Btn_CEP_Click(object sender, EventArgs e)
+        private void Btn_CEP_Click(object sender, System.EventArgs e)
         {
             Msk_TextBox.UseSystemPasswordChar = false;
             Lbl_Conteudo.Text = string.Empty;
@@ -35,7 +34,7 @@ namespace WindowsForms
             Msk_TextBox.Focus();
         }
 
-        private void Btn_Moeda_Click(object sender, EventArgs e)
+        private void Btn_Moeda_Click(object sender, System.EventArgs e)
         {
             Msk_TextBox.UseSystemPasswordChar = false;
             Lbl_Conteudo.Text = string.Empty;
@@ -45,7 +44,7 @@ namespace WindowsForms
             Msk_TextBox.Focus();
         }
 
-        private void Btn_Data_Click(object sender, EventArgs e)
+        private void Btn_Data_Click(object sender, System.EventArgs e)
         {
             Msk_TextBox.UseSystemPasswordChar = false;
             Lbl_Conteudo.Text = string.Empty;
@@ -55,7 +54,7 @@ namespace WindowsForms
             Msk_TextBox.Focus();
         }
 
-        private void Btn_Telefone_Click(object sender, EventArgs e)
+        private void Btn_Telefone_Click(object sender, System.EventArgs e)
         {
             Msk_TextBox.UseSystemPasswordChar = false;
             Lbl_Conteudo.Text = string.Empty;
@@ -65,7 +64,7 @@ namespace WindowsForms
             Msk_TextBox.Focus();
         }
 
-        private void Btn_Senha_Click(object sender, EventArgs e)
+        private void Btn_Senha_Click(object sender, System.EventArgs e)
         {
             Msk_TextBox.UseSystemPasswordChar = true;
             Lbl_Conteudo.Text = string.Empty;

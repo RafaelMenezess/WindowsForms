@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace WindowsForms
 {
-    public partial class Frm_User_Control : UserControl
+    public partial class Frm_HelloWorld_UC : UserControl
     {
-        public Frm_User_Control()
+        public Frm_HelloWorld_UC()
         {
             InitializeComponent();
         }
