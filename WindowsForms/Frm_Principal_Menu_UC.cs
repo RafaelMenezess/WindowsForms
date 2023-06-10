@@ -17,8 +17,12 @@ namespace WindowsForms
 
         private void helloWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_HelloWorld f = new Frm_HelloWorld();
-            f.ShowDialog();
+            Frm_User_Control U = new Frm_User_Control();
+            TabPage TB = new TabPage();
+            TB.Name = "Hello World";
+            TB.Text = "Hello World";
+            TB.Controls.Add(U);
+            Tbc_Aplicacoes.TabPages.Add(TB);
         }
 
         private void mascaraToolStripMenuItem_Click(object sender, EventArgs e)
