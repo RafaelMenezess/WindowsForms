@@ -34,7 +34,10 @@ namespace WindowsForms
                 }
                 else
                 {
-                    if (MessageBox.Show("Você deseja realmente validar o CPF?", "Mensagem de validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    Frm_Questao Db = new Frm_Questao();
+                    Db.ShowDialog();                
+
+                    if (Db.DialogResult == DialogResult.Yes)
                     {
                         bool validaCpf = false;
                         validaCpf = Cls_Uteis.Valida(Msk_CPF.Text);
