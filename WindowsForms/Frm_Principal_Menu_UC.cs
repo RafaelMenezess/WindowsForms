@@ -15,6 +15,12 @@ namespace WindowsForms
         public Frm_Principal_Menu_UC()
         {
             InitializeComponent();
+
+            novoToolStripMenuItem.Enabled = false;
+            apagarAbaToolStripMenuItem.Enabled = false;
+            abrirImagemToolStripMenuItem.Enabled = false;
+            desconectarToolStripMenuItem.Enabled = false;
+
         }
         private void demonstraçãoKeyToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -134,6 +140,24 @@ namespace WindowsForms
         {
             Frm_Login f = new Frm_Login();
             f.ShowDialog();
+
+            if (f.DialogResult == DialogResult.OK)
+            {
+                novoToolStripMenuItem.Enabled = true;
+                apagarAbaToolStripMenuItem.Enabled = true;
+                abrirImagemToolStripMenuItem.Enabled = true;
+                conectarToolStripMenuItem.Enabled = false;
+                desconectarToolStripMenuItem.Enabled = true;
+            }
+        }
+
+        private void desconectarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            novoToolStripMenuItem.Enabled = false;
+            apagarAbaToolStripMenuItem.Enabled = false;
+            abrirImagemToolStripMenuItem.Enabled = false;
+            conectarToolStripMenuItem.Enabled = true;
+            desconectarToolStripMenuItem.Enabled = false;
         }
     }
 }
