@@ -34,7 +34,7 @@ namespace WindowsForms
                 }
                 else
                 {
-                    Frm_Questao Db = new Frm_Questao();
+                    Frm_Questao Db = new Frm_Questao("Frm_ValidaCPF2","Tem certeza em validar CPF?");
                     Db.ShowDialog();                
 
                     if (Db.DialogResult == DialogResult.Yes)

@@ -133,6 +133,16 @@ namespace WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Frm_question {
+            get {
+                object obj = ResourceManager.GetObject("Frm_question", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Frm_ValidaCPF {
             get {
                 object obj = ResourceManager.GetObject("Frm_ValidaCPF", resourceCulture);
@@ -187,16 +197,6 @@ namespace WindowsForms.Properties {
             get {
                 object obj = ResourceManager.GetObject("Frm_ValidaSenha1", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_question_96 {
-            get {
-                object obj = ResourceManager.GetObject("icons8_question_96", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
