@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace WindowsForms
 {
@@ -9,6 +10,25 @@ namespace WindowsForms
             InitializeComponent();
 
             Lbl_ArquivoImagem.Text = nomeArquivoImagem;
+            Pic_ArquivoImagem.Image = Image.FromFile(nomeArquivoImagem);
+        }
+
+        private void Btn_Cor_Click(object sender, System.EventArgs e)
+        {
+            ColorDialog CDb = new ColorDialog();
+            if (CDb.ShowDialog() == DialogResult.OK)
+            {
+                Lbl_ArquivoImagem.ForeColor = CDb.Color;
+            }
+        }
+
+        private void Btn_fonte_Click(object sender, System.EventArgs e)
+        {
+            FontDialog FDb = new FontDialog();
+            if (FDb.ShowDialog() == DialogResult.OK)
+            {
+                Lbl_ArquivoImagem.Font = FDb.Font;
+            }
         }
     }
 }

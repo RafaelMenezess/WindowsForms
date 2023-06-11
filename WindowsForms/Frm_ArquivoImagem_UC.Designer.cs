@@ -30,6 +30,8 @@
         {
             this.Lbl_ArquivoImagem = new System.Windows.Forms.Label();
             this.Pic_ArquivoImagem = new System.Windows.Forms.PictureBox();
+            this.Btn_Cor = new System.Windows.Forms.Button();
+            this.Btn_font = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_ArquivoImagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,10 +52,32 @@
             this.Pic_ArquivoImagem.TabIndex = 1;
             this.Pic_ArquivoImagem.TabStop = false;
             // 
+            // Btn_Cor
+            // 
+            this.Btn_Cor.Location = new System.Drawing.Point(20, 4);
+            this.Btn_Cor.Name = "Btn_Cor";
+            this.Btn_Cor.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Cor.TabIndex = 2;
+            this.Btn_Cor.Text = "Cor";
+            this.Btn_Cor.UseVisualStyleBackColor = true;
+            this.Btn_Cor.Click += new System.EventHandler(this.Btn_Cor_Click);
+            // 
+            // Btn_font
+            // 
+            this.Btn_font.Location = new System.Drawing.Point(154, 3);
+            this.Btn_font.Name = "Btn_font";
+            this.Btn_font.Size = new System.Drawing.Size(75, 23);
+            this.Btn_font.TabIndex = 3;
+            this.Btn_font.Text = "Font";
+            this.Btn_font.UseVisualStyleBackColor = true;
+            this.Btn_font.Click += new System.EventHandler(this.Btn_fonte_Click);
+            // 
             // Frm_ArquivoImagem_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Btn_font);
+            this.Controls.Add(this.Btn_Cor);
             this.Controls.Add(this.Pic_ArquivoImagem);
             this.Controls.Add(this.Lbl_ArquivoImagem);
             this.Name = "Frm_ArquivoImagem_UC";
@@ -68,5 +92,7 @@
 
         private System.Windows.Forms.Label Lbl_ArquivoImagem;
         private System.Windows.Forms.PictureBox Pic_ArquivoImagem;
+        private System.Windows.Forms.Button Btn_Cor;
+        private System.Windows.Forms.Button Btn_font;
     }
 }
