@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CursoWindowsFormsBiblioteca;
+using System;
 using System.Windows.Forms;
 
 namespace WindowsForms
@@ -143,11 +144,23 @@ namespace WindowsForms
 
             if (f.DialogResult == DialogResult.OK)
             {
-                novoToolStripMenuItem.Enabled = true;
-                apagarAbaToolStripMenuItem.Enabled = true;
-                abrirImagemToolStripMenuItem.Enabled = true;
-                conectarToolStripMenuItem.Enabled = false;
-                desconectarToolStripMenuItem.Enabled = true;
+                string senha = f.senha;
+                string login = f.login;
+
+                if (Cls_Uteis.validaSenhaLogin(senha) == true)
+                {
+                    novoToolStripMenuItem.Enabled = true;
+                    apagarAbaToolStripMenuItem.Enabled = true;
+                    abrirImagemToolStripMenuItem.Enabled = true;
+                    conectarToolStripMenuItem.Enabled = false;
+                    desconectarToolStripMenuItem.Enabled = true;
+
+                    MessageBox.Show("Bem vindo " + login + " !", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Senha Inválida!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
