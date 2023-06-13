@@ -13,7 +13,7 @@ namespace WindowsForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Principal_Menu_UC());
+            Application.Run(new Frm_MouseEventos());
         }
     }
 }
