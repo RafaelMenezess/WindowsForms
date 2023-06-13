@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace WindowsForms
 {
@@ -16,7 +17,12 @@ namespace WindowsForms
                 var posicaoX = e.X;
                 var posicaoY = e.Y;
 
-                MessageBox.Show($"Cliquei com o botão da direita do mouse. A posição relativa foi ({posicaoX}, {posicaoY}");
+                var contextMenu = new ContextMenuStrip();
+                var vTooltip001 = new ToolStripMenuItem();
+                vTooltip001.Text = "Item do menu 1";
+                contextMenu.Items.Add(vTooltip001);
+                contextMenu.Show(this, new Point(posicaoX, posicaoY));
+
             }
         }
     }
