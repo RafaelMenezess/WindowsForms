@@ -13,7 +13,10 @@ namespace WindowsForms
         {
             if (e.Button == MouseButtons.Right)
             {
-                MessageBox.Show("Cliquei com o botão da direita do mouse");
+                var posicaoX = e.X;
+                var posicaoY = e.Y;
+
+                MessageBox.Show($"Cliquei com o botão da direita do mouse. A posição relativa foi ({posicaoX}, {posicaoY}");
             }
         }
     }
