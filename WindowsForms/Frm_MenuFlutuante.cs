@@ -15,15 +15,17 @@ namespace WindowsForms
             if (e.Button == MouseButtons.Right)
             {
                 var contextMenu = new ContextMenuStrip();
-                contextMenu.Items.Add(DesenhaItemMenu("Item do menu 1"));
-                contextMenu.Items.Add(DesenhaItemMenu("Item do menu 2"));
+                contextMenu.Items.Add(DesenhaItemMenu("Item do menu 1", "icons8_key_96"));
+                contextMenu.Items.Add(DesenhaItemMenu("Item do menu 2", "Frm_ValidaSenha"));
                 contextMenu.Show(this, new Point(e.X, e.Y));
             }
         }
-        private ToolStripMenuItem DesenhaItemMenu(string text)
+        private ToolStripMenuItem DesenhaItemMenu(string text, string nomeImagem)
         {
             var vToolti = new ToolStripMenuItem();
-            vToolti.Text = text;
+            vToolti.Text = text;            
+            Image myImage = (Image)Properties.Resources.ResourceManager.GetObject(nomeImagem);
+            vToolti.Image = myImage;
 
             return vToolti;
         }
