@@ -1,5 +1,6 @@
 ﻿using CursoWindowsFormsBiblioteca;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WindowsForms
@@ -183,5 +184,54 @@ namespace WindowsForms
                 desconectarToolStripMenuItem.Enabled = false;
             }
         }
+
+        private void Tbc_Aplicacoes_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var contextMenu = new ContextMenuStrip();
+                var vTooltip001 = DesenhaItemMenu("Apagar a Aba", "DeleteTab");
+                var vTooltip002 = DesenhaItemMenu("Apagar Todas a Esquerda", "DeleteLeft");
+                var vTooltip003 = DesenhaItemMenu("Apagar Todas a Direita", "DeleteRight");
+                var vTooltip004 = DesenhaItemMenu("Apagar Todas menos Esta", "DeleteAll");
+
+                contextMenu.Items.Add(vTooltip001);
+                contextMenu.Items.Add(vTooltip002);
+                contextMenu.Items.Add(vTooltip003);
+                contextMenu.Items.Add(vTooltip004);
+                contextMenu.Show(this, new Point(e.X, e.Y));
+
+                vTooltip001.Click += new EventHandler(vTooltip001_Click);
+                vTooltip002.Click += new EventHandler(vTooltip002_Click);
+                vTooltip003.Click += new EventHandler(vTooltip003_Click);
+                vTooltip004.Click += new EventHandler(vTooltip004_Click);
+            }
+        }
+        private ToolStripMenuItem DesenhaItemMenu(string text, string nomeImagem)
+        {
+            var vTooltip = new ToolStripMenuItem();
+            vTooltip.Text = text;
+            Image myImage = (Image)Properties.Resources.ResourceManager.GetObject(nomeImagem);
+            vTooltip.Image = myImage;
+
+            return vTooltip;
+        }
+        private void vTooltip001_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void vTooltip002_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void vTooltip003_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void vTooltip004_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
