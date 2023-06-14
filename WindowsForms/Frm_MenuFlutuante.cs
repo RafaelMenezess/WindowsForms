@@ -14,16 +14,18 @@ namespace WindowsForms
         {
             if (e.Button == MouseButtons.Right)
             {
-                var posicaoX = e.X;
-                var posicaoY = e.Y;
-
                 var contextMenu = new ContextMenuStrip();
-                var vTooltip001 = new ToolStripMenuItem();
-                vTooltip001.Text = "Item do menu 1";
-                contextMenu.Items.Add(vTooltip001);
-                contextMenu.Show(this, new Point(posicaoX, posicaoY));
-
+                contextMenu.Items.Add(DesenhaItemMenu("Item do menu 1"));
+                contextMenu.Items.Add(DesenhaItemMenu("Item do menu 2"));
+                contextMenu.Show(this, new Point(e.X, e.Y));
             }
+        }
+        private ToolStripMenuItem DesenhaItemMenu(string text)
+        {
+            var vToolti = new ToolStripMenuItem();
+            vToolti.Text = text;
+
+            return vToolti;
         }
     }
 }
