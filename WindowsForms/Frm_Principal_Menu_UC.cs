@@ -218,7 +218,10 @@ namespace WindowsForms
         }
         private void vTooltip001_Click(object sender, EventArgs e)
         {
-
+            if (!(Tbc_Aplicacoes.SelectedTab == null))
+            {
+                Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.SelectedTab);
+            }
         }
         private void vTooltip002_Click(object sender, EventArgs e)
         {
