@@ -237,6 +237,12 @@ namespace WindowsForms
         }
         private void vTooltip003_Click(object sender, EventArgs e)
         {
+            int itemSelecionado = Tbc_Aplicacoes.SelectedIndex;
+
+            for (int i = Tbc_Aplicacoes.TabCount - 1; i > itemSelecionado; i--)
+            {
+                Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.TabPages[i]);
+            }
 
         }
         private void vTooltip004_Click(object sender, EventArgs e)
