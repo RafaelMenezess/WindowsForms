@@ -193,7 +193,7 @@ namespace WindowsForms
                 var vTooltip001 = DesenhaItemMenu("Apagar a Aba", "DeleteTab");
                 var vTooltip002 = DesenhaItemMenu("Apagar Todas a Esquerda", "DeleteLeft");
                 var vTooltip003 = DesenhaItemMenu("Apagar Todas a Direita", "DeleteRight");
-                var vTooltip004 = DesenhaItemMenu("Apagar Todas menos Esta", "DeleteAll");
+                var vTooltip004 = DesenhaItemMenu("Apagar Todas menos essa", "DeleteAll");
 
                 contextMenu.Items.Add(vTooltip001);
                 contextMenu.Items.Add(vTooltip002);
@@ -227,28 +227,37 @@ namespace WindowsForms
         {
             if (!(Tbc_Aplicacoes.SelectedTab == null))
             {
-                int itemSelecionado = Tbc_Aplicacoes.SelectedIndex;
-
-                for (int i = itemSelecionado - 1; i >= 0; i--)
-                {
-                    Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.TabPages[i]);
-                }
+                ApagaEsquerda(Tbc_Aplicacoes.SelectedIndex);
             }
         }
         private void vTooltip003_Click(object sender, EventArgs e)
         {
-            int itemSelecionado = Tbc_Aplicacoes.SelectedIndex;
-
+            if (!(Tbc_Aplicacoes.SelectedTab == null))
+            {
+                ApagaDireita(Tbc_Aplicacoes.SelectedIndex);
+            }
+        }
+        private void vTooltip004_Click(object sender, EventArgs e)
+        {
+            if (!(Tbc_Aplicacoes.SelectedTab == null))
+            {
+                ApagaEsquerda(Tbc_Aplicacoes.SelectedIndex);
+                ApagaDireita(Tbc_Aplicacoes.SelectedIndex);
+            }
+        }
+        private void ApagaDireita(int itemSelecionado)
+        {
             for (int i = Tbc_Aplicacoes.TabCount - 1; i > itemSelecionado; i--)
             {
                 Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.TabPages[i]);
             }
-
         }
-        private void vTooltip004_Click(object sender, EventArgs e)
+        private void ApagaEsquerda(int itemSelecionado)
         {
-
+            for (int i = itemSelecionado - 1; i >= 0; i--)
+            {
+                Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.TabPages[i]);
+            }
         }
     }
-
 }
