@@ -199,6 +199,7 @@
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // açõesToolStripMenuItem
             // 
@@ -243,6 +244,9 @@
             this.Iml_Imagens.Images.SetKeyName(4, "Frm_ValidaCPF2.png");
             this.Iml_Imagens.Images.SetKeyName(5, "Frm_ValidaSenha.png");
             this.Iml_Imagens.Images.SetKeyName(6, "icons8-opened-folder-96.png");
+            this.Iml_Imagens.Images.SetKeyName(7, "Cadastros.png");
+            this.Iml_Imagens.Images.SetKeyName(8, "money.png");
+            this.Iml_Imagens.Images.SetKeyName(9, "user.png");
             // 
             // Frm_Principal_Menu_UC
             // 

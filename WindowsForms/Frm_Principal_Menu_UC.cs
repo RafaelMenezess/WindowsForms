@@ -14,6 +14,7 @@ namespace WindowsForms
         int controleValidaCPF2 = 0;
         int controleValidaSenha = 0;
         int controleArquivoImagem = 0;
+        int controleCadastroClientes = 0;
         public Frm_Principal_Menu_UC()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace WindowsForms
             apagarAbaToolStripMenuItem.Enabled = false;
             abrirImagemToolStripMenuItem.Enabled = false;
             desconectarToolStripMenuItem.Enabled = false;
+            cadastroToolStripMenuItem.Enabled = false;
 
         }
         private void demonstraçãoKeyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -155,8 +157,9 @@ namespace WindowsForms
                     abrirImagemToolStripMenuItem.Enabled = true;
                     conectarToolStripMenuItem.Enabled = false;
                     desconectarToolStripMenuItem.Enabled = true;
+                    cadastroToolStripMenuItem.Enabled = true;
 
-                    MessageBox.Show("Bem vindo " + login + " !", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Bem vindo " + login + " !", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -182,6 +185,7 @@ namespace WindowsForms
                 abrirImagemToolStripMenuItem.Enabled = false;
                 conectarToolStripMenuItem.Enabled = true;
                 desconectarToolStripMenuItem.Enabled = false;
+                cadastroToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -258,6 +262,19 @@ namespace WindowsForms
             {
                 Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.TabPages[i]);
             }
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controleCadastroClientes += 1;
+            Frm_CadastroCliente_UC U = new Frm_CadastroCliente_UC();
+            U.Dock = DockStyle.Fill;
+            TabPage TB = new TabPage();
+            TB.Name = "Cadastro Cliente " + controleCadastroClientes;
+            TB.Text = "Cadastro Cliente " + controleCadastroClientes;
+            TB.ImageIndex = 9;
+            TB.Controls.Add(U);
+            Tbc_Aplicacoes.TabPages.Add(TB);
         }
     }
 }
