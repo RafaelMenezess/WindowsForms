@@ -113,7 +113,7 @@ namespace WindowsForms
         {
             if (!(Tbc_Aplicacoes.SelectedTab == null))
             {
-                Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.SelectedTab);
+                ApagaAba(Tbc_Aplicacoes.SelectedTab);
             }
         }
 
@@ -177,7 +177,7 @@ namespace WindowsForms
             {
                 for (int i = Tbc_Aplicacoes.TabPages.Count - 1; i >= 0; i--)
                 {
-                    Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.TabPages[i]);
+                    ApagaAba(Tbc_Aplicacoes.TabPages[i]);
                 }
 
                 novoToolStripMenuItem.Enabled = false;
@@ -224,7 +224,7 @@ namespace WindowsForms
         {
             if (!(Tbc_Aplicacoes.SelectedTab == null))
             {
-                Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.SelectedTab);
+                ApagaAba(Tbc_Aplicacoes.SelectedTab);
             }
         }
         private void vTooltip002_Click(object sender, EventArgs e)
@@ -253,28 +253,45 @@ namespace WindowsForms
         {
             for (int i = Tbc_Aplicacoes.TabCount - 1; i > itemSelecionado; i--)
             {
-                Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.TabPages[i]);
+                ApagaAba(Tbc_Aplicacoes.TabPages[i]);
             }
         }
         private void ApagaEsquerda(int itemSelecionado)
         {
             for (int i = itemSelecionado - 1; i >= 0; i--)
             {
-                Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.TabPages[i]);
+                ApagaAba(Tbc_Aplicacoes.TabPages[i]);
             }
         }
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            controleCadastroClientes += 1;
-            Frm_CadastroCliente_UC U = new Frm_CadastroCliente_UC();
-            U.Dock = DockStyle.Fill;
-            TabPage TB = new TabPage();
-            TB.Name = "Cadastro Cliente " + controleCadastroClientes;
-            TB.Text = "Cadastro Cliente " + controleCadastroClientes;
-            TB.ImageIndex = 9;
-            TB.Controls.Add(U);
-            Tbc_Aplicacoes.TabPages.Add(TB);
+            if (controleCadastroClientes == 0)
+            {
+                controleCadastroClientes += 1;
+                Frm_CadastroCliente_UC U = new Frm_CadastroCliente_UC();
+                U.Dock = DockStyle.Fill;
+                TabPage TB = new TabPage();
+                TB.Name = "Cadastro Clientes";
+                TB.Text = "Cadastro Clientes";
+                TB.ImageIndex = 9;
+                TB.Controls.Add(U);
+                Tbc_Aplicacoes.TabPages.Add(TB);
+            }
+            else
+            {
+                MessageBox.Show("Não posso abrir o Cadastro de Clientes porque já esta aberto.", "Banco ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void ApagaAba(TabPage TB)
+        {
+            if (TB.Name == "Cadastro Clientes")
+            {
+                controleCadastroClientes = 0;
+            }
+
+            Tbc_Aplicacoes.TabPages.Remove(TB);
         }
     }
 }
