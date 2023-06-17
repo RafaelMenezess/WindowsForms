@@ -21,6 +21,10 @@ namespace WindowsForms
             Lbl_Profissao.Text = "Profissão";
             Lbl_RendaFamiliar.Text = "Renda Familiar";
             Lbl_Telefone.Text = "Telefone";
+            Grp_Codigo.Text = "Código";
+            Grp_DadosPessoais.Text = "Dados Pessoais";
+            Grp_Endereco.Text = "Endereço";
+            Grp_Outros.Text = "Outros";
         }
     }
 }
