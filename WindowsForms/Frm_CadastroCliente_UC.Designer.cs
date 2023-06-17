@@ -45,7 +45,6 @@
             this.Lbl_Bairro = new System.Windows.Forms.Label();
             this.Txt_Bairro = new System.Windows.Forms.TextBox();
             this.Lbl_Estado = new System.Windows.Forms.Label();
-            this.Txt_Estado = new System.Windows.Forms.TextBox();
             this.Lbl_Telefone = new System.Windows.Forms.Label();
             this.Txt_Telefone = new System.Windows.Forms.TextBox();
             this.Lbl_Profissao = new System.Windows.Forms.Label();
@@ -65,6 +64,7 @@
             this.Lbl_Cidade = new System.Windows.Forms.Label();
             this.Txt_Cidade = new System.Windows.Forms.TextBox();
             this.Grp_Outros = new System.Windows.Forms.GroupBox();
+            this.Cmb_Estados = new System.Windows.Forms.ComboBox();
             this.Grp_Codigo.SuspendLayout();
             this.Grp_DadosPessoais.SuspendLayout();
             this.Grp_Genero.SuspendLayout();
@@ -142,7 +142,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_NomeMae.Location = new System.Drawing.Point(6, 69);
             this.Txt_NomeMae.Name = "Txt_NomeMae";
-            this.Txt_NomeMae.Size = new System.Drawing.Size(439, 20);
+            this.Txt_NomeMae.Size = new System.Drawing.Size(465, 20);
             this.Txt_NomeMae.TabIndex = 3;
             // 
             // Lbl_CEP
@@ -221,15 +221,6 @@
             this.Lbl_Estado.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Estado.TabIndex = 18;
             this.Lbl_Estado.Text = "label1";
-            // 
-            // Txt_Estado
-            // 
-            this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Estado.Location = new System.Drawing.Point(374, 111);
-            this.Txt_Estado.Name = "Txt_Estado";
-            this.Txt_Estado.Size = new System.Drawing.Size(380, 20);
-            this.Txt_Estado.TabIndex = 15;
             // 
             // Lbl_Telefone
             // 
@@ -366,9 +357,9 @@
             this.Grp_TemPai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Grp_TemPai.Controls.Add(this.Chk_TemPai);
-            this.Grp_TemPai.Location = new System.Drawing.Point(579, 91);
+            this.Grp_TemPai.Location = new System.Drawing.Point(553, 91);
             this.Grp_TemPai.Name = "Grp_TemPai";
-            this.Grp_TemPai.Size = new System.Drawing.Size(174, 41);
+            this.Grp_TemPai.Size = new System.Drawing.Size(200, 41);
             this.Grp_TemPai.TabIndex = 9;
             this.Grp_TemPai.TabStop = false;
             // 
@@ -376,7 +367,7 @@
             // 
             this.Chk_TemPai.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Chk_TemPai.AutoSize = true;
-            this.Chk_TemPai.Location = new System.Drawing.Point(-7, 16);
+            this.Chk_TemPai.Location = new System.Drawing.Point(6, 16);
             this.Chk_TemPai.Name = "Chk_TemPai";
             this.Chk_TemPai.Size = new System.Drawing.Size(80, 17);
             this.Chk_TemPai.TabIndex = 6;
@@ -386,6 +377,7 @@
             // 
             // Grp_Endereco
             // 
+            this.Grp_Endereco.Controls.Add(this.Cmb_Estados);
             this.Grp_Endereco.Controls.Add(this.Lbl_Cidade);
             this.Grp_Endereco.Controls.Add(this.Txt_Cidade);
             this.Grp_Endereco.Controls.Add(this.Lbl_CEP);
@@ -397,7 +389,6 @@
             this.Grp_Endereco.Controls.Add(this.Lbl_Bairro);
             this.Grp_Endereco.Controls.Add(this.Txt_Bairro);
             this.Grp_Endereco.Controls.Add(this.Lbl_Estado);
-            this.Grp_Endereco.Controls.Add(this.Txt_Estado);
             this.Grp_Endereco.Location = new System.Drawing.Point(12, 249);
             this.Grp_Endereco.Name = "Grp_Endereco";
             this.Grp_Endereco.Size = new System.Drawing.Size(760, 146);
@@ -435,6 +426,14 @@
             this.Grp_Outros.TabIndex = 31;
             this.Grp_Outros.TabStop = false;
             this.Grp_Outros.Text = "groupBox1";
+            // 
+            // Cmb_Estados
+            // 
+            this.Cmb_Estados.FormattingEnabled = true;
+            this.Cmb_Estados.Location = new System.Drawing.Point(373, 110);
+            this.Cmb_Estados.Name = "Cmb_Estados";
+            this.Cmb_Estados.Size = new System.Drawing.Size(381, 21);
+            this.Cmb_Estados.TabIndex = 32;
             // 
             // Frm_CadastroCliente_UC
             // 
@@ -482,7 +481,6 @@
         private System.Windows.Forms.Label Lbl_Bairro;
         private System.Windows.Forms.TextBox Txt_Bairro;
         private System.Windows.Forms.Label Lbl_Estado;
-        private System.Windows.Forms.TextBox Txt_Estado;
         private System.Windows.Forms.Label Lbl_Telefone;
         private System.Windows.Forms.TextBox Txt_Telefone;
         private System.Windows.Forms.Label Lbl_Profissao;
@@ -502,5 +500,6 @@
         private System.Windows.Forms.RadioButton Rdb_Indefinido;
         private System.Windows.Forms.RadioButton Rdb_Feminino;
         private System.Windows.Forms.RadioButton Rdb_Masculino;
+        private System.Windows.Forms.ComboBox Cmb_Estados;
     }
 }
