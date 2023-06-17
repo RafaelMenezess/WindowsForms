@@ -26,6 +26,19 @@ namespace WindowsForms
             Grp_DadosPessoais.Text = "Dados Pessoais";
             Grp_Endereco.Text = "Endereço";
             Grp_Outros.Text = "Outros";
+            Chk_TemPai.Text = "Pai desconhecido";
+        }
+
+        private void Chk_TemPai_CheckedChanged(object sender, System.EventArgs e)
+        {
+            if (Chk_TemPai.Checked)
+            {
+                Txt_NomePai.Enabled = false;
+            }
+            else
+            {
+                Txt_NomePai.Enabled = true;
+            }
         }
     }
 }
