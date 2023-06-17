@@ -59,7 +59,6 @@ namespace WindowsForms
             Cmb_Estados.Items.Add("São Paulo(SP)");
             Cmb_Estados.Items.Add("Sergipe(SE)");
             Cmb_Estados.Items.Add("Tocantins(TO)");
-
         }
 
         private void Chk_TemPai_CheckedChanged(object sender, System.EventArgs e)
