@@ -113,6 +113,16 @@ namespace WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ExcluirBarra {
+            get {
+                object obj = ResourceManager.GetObject("ExcluirBarra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Frm_DemonstracaoKey {
             get {
                 object obj = ResourceManager.GetObject("Frm_DemonstracaoKey", resourceCulture);
@@ -267,6 +277,16 @@ namespace WindowsForms.Properties {
             get {
                 object obj = ResourceManager.GetObject("icons8_question_961", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LimparBarra {
+            get {
+                object obj = ResourceManager.GetObject("LimparBarra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

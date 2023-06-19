@@ -295,6 +295,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Frm_Principal.ico" />
+    <None Include="Imagens\LimparBarra.png" />
     <None Include="Imagens\user.png" />
     <None Include="Imagens\money.png" />
     <None Include="Imagens\Cadastros.png" />
@@ -302,6 +303,7 @@
     <Content Include="Imagens\DeleteLeft.png" />
     <Content Include="Imagens\DeleteRight.png" />
     <Content Include="Imagens\DeleteTab.png" />
+    <None Include="Imagens\ExcluirBarra.png" />
     <Content Include="Imagens\Frm_DemonstracaoKey.ico" />
     <Content Include="Imagens\Frm_DemonstracaoKey.png" />
     <Content Include="Imagens\Frm_HelloWorld.ico" />
