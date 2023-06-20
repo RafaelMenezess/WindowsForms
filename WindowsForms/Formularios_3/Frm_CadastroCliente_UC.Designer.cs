@@ -465,6 +465,7 @@
             this.newToolStripButton.Name = "newToolStripButton";
             this.newToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.newToolStripButton.Text = "&New";
+            this.newToolStripButton.Click += new System.EventHandler(this.newToolStripButton_Click);
             // 
             // openToolStripButton
             // 
@@ -474,6 +475,7 @@
             this.openToolStripButton.Name = "openToolStripButton";
             this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.openToolStripButton.Text = "&Open";
+            this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
             // 
             // saveToolStripButton
             // 
@@ -483,6 +485,7 @@
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "&Save";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // ApagaToolStripButton1
             // 
@@ -492,6 +495,7 @@
             this.ApagaToolStripButton1.Name = "ApagaToolStripButton1";
             this.ApagaToolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.ApagaToolStripButton1.Text = "toolStripButton1";
+            this.ApagaToolStripButton1.Click += new System.EventHandler(this.ApagaToolStripButton1_Click);
             // 
             // LimparToolStripButton1
             // 
@@ -501,6 +505,7 @@
             this.LimparToolStripButton1.Name = "LimparToolStripButton1";
             this.LimparToolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.LimparToolStripButton1.Text = "toolStripButton1";
+            this.LimparToolStripButton1.Click += new System.EventHandler(this.LimparToolStripButton1_Click);
             // 
             // Frm_CadastroCliente_UC
             // 

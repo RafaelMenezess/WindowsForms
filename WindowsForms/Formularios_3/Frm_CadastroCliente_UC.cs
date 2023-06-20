@@ -78,5 +78,30 @@ namespace WindowsForms
                 Txt_NomePai.Enabled = true;
             }
         }
+
+        private void newToolStripButton_Click(object sender, System.EventArgs e)
+        {
+            MessageBox.Show("Efetuei um clique sobre o botão Novo");
+        }
+
+        private void openToolStripButton_Click(object sender, System.EventArgs e)
+        {
+            MessageBox.Show("Efetuei um clique sobre o botão Abrir");
+        }
+
+        private void saveToolStripButton_Click(object sender, System.EventArgs e)
+        {
+            MessageBox.Show("Efetuei um clique sobre o botão Salvar");
+        }
+
+        private void ApagaToolStripButton1_Click(object sender, System.EventArgs e)
+        {
+            MessageBox.Show("Efetuei um clique sobre o botão Excluir");
+        }
+
+        private void LimparToolStripButton1_Click(object sender, System.EventArgs e)
+        {
+            MessageBox.Show("Efetuei um clique sobre o botão Limpar");
+        }
     }
 }
