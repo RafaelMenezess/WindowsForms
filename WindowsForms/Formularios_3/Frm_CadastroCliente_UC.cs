@@ -59,6 +59,12 @@ namespace WindowsForms
             Cmb_Estados.Items.Add("São Paulo(SP)");
             Cmb_Estados.Items.Add("Sergipe(SE)");
             Cmb_Estados.Items.Add("Tocantins(TO)");
+
+            Tls_Principal.Items[0].ToolTipText = "Incluir na base de dados um novo cliente";
+            Tls_Principal.Items[1].ToolTipText = "Capturar um cliente já cadastrado na base";
+            Tls_Principal.Items[2].ToolTipText = "Atualize o cliente já existente";
+            Tls_Principal.Items[3].ToolTipText = "Apaga o cliente selecionado";
+            Tls_Principal.Items[4].ToolTipText = "Limpa dados da tela da entrada de dados";
         }
 
         private void Chk_TemPai_CheckedChanged(object sender, System.EventArgs e)
