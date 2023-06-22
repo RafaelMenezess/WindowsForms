@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CursoWindownsFormsBiblioteca.Classes
 {
@@ -6,6 +7,7 @@ namespace CursoWindownsFormsBiblioteca.Classes
     {
         public class Unit
         {
+            [Required(ErrorMessage = "Código do cliente é obrigatório")]
             public string Id { get; set; }
             public string Nome { get; set; }
             public string NomePai { get; set; }
@@ -26,7 +28,7 @@ namespace CursoWindownsFormsBiblioteca.Classes
 
         public class List
         {
-            public List<Unit> ListUnit{ get; set; }
+            public List<Unit> ListUnit { get; set; }
         }
     }
 }
