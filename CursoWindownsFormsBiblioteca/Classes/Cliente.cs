@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace CursoWindownsFormsBiblioteca.Classes
 {
@@ -24,6 +25,23 @@ namespace CursoWindownsFormsBiblioteca.Classes
             public string Telefone { get; set; }
             public string Profissao { get; set; }
             public double RendaFamiliar { get; set; }
+
+            public void ValidaClasse()
+            {
+                ValidationContext context = new ValidationContext(this, serviceProvider: null, items: null);
+                List<ValidationResult> results = new List<ValidationResult>();
+                bool isValid = Validator.TryValidateObject(this, context, results, true);
+
+                if (isValid == false)
+                {
+                    StringBuilder sbrErrors = new StringBuilder();
+                    foreach (var validationResult in results)
+                    {
+                        sbrErrors.AppendLine(validationResult.ErrorMessage);
+                    }
+                    throw new ValidationException(sbrErrors.ToString());
+                }
+            }
         }
 
         public class List
