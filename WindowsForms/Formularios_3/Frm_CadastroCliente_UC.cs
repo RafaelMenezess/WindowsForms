@@ -1,8 +1,6 @@
 ﻿using CursoWindownsFormsBiblioteca.Classes;
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
-using System.Xml.Schema;
 
 namespace WindowsForms
 {
@@ -94,9 +92,8 @@ namespace WindowsForms
             }
             catch (ValidationException ex)
             {
-                MessageBox.Show(ex.Message, "ByteBank",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void openToolStripButton_Click(object sender, System.EventArgs e)

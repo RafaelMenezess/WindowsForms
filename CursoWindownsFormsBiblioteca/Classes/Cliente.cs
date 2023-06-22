@@ -9,6 +9,8 @@ namespace CursoWindownsFormsBiblioteca.Classes
         public class Unit
         {
             [Required(ErrorMessage = "Código do cliente é obrigatório")]
+            [RegularExpression("([0-9]+)", ErrorMessage ="Código do cliente so aceita valores numéricos")]
+            [StringLength(6, MinimumLength =6,ErrorMessage ="Código do cliente deve ter 6 dígitos")]
             public string Id { get; set; }
             public string Nome { get; set; }
             public string NomePai { get; set; }
