@@ -1,4 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using CursoWindownsFormsBiblioteca.Classes;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Windows.Forms;
+using System.Xml.Schema;
 
 namespace WindowsForms
 {
@@ -81,7 +85,18 @@ namespace WindowsForms
 
         private void newToolStripButton_Click(object sender, System.EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão Novo");
+            try
+            {
+                Cliente.Unit c = new Cliente.Unit();
+                c.Id = Txt_Codigo.Text;
+                c.ValidaClasse();
+                MessageBox.Show("Classe foi inicializada sem erros", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (ValidationException ex)
+            {
+                MessageBox.Show(ex.Message, "ByteBank",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void openToolStripButton_Click(object sender, System.EventArgs e)
