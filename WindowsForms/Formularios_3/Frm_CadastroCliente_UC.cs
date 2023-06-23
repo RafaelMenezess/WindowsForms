@@ -1,4 +1,5 @@
 ﻿using CursoWindownsFormsBiblioteca.Classes;
+using CursoWindowsFormsBiblioteca;
 using Microsoft.VisualBasic;
 using System;
 using System.ComponentModel.DataAnnotations;
