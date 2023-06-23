@@ -90,9 +90,14 @@ namespace WindowsForms
                 Cliente.Unit c = new Cliente.Unit();
                 c = leituraFormulario();
                 c.ValidaClasse();
+                c.ValidaComplemento();
                 MessageBox.Show("Classe foi inicializada sem erros", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ValidationException ex)
+            {
+                MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -125,7 +130,7 @@ namespace WindowsForms
             c.Nome = Txt_NomeCliente.Text;
             c.NomeMae = Txt_NomeMae.Text;
             c.NomePai = Txt_NomePai.Text;
-            c.TemPai = Chk_TemPai.Checked ? true : false;
+            c.NaoTemPai = Chk_TemPai.Checked ? true : false;
             c.Cpf = Txt_CPF.Text;
             if (Rdb_Masculino.Checked)
             {
