@@ -1,4 +1,6 @@
 ﻿using CursoWindownsFormsBiblioteca.Classes;
+using Microsoft.VisualBasic;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
 
@@ -69,7 +71,7 @@ namespace WindowsForms
             Tls_Principal.Items[4].ToolTipText = "Limpa dados da tela da entrada de dados";
         }
 
-        private void Chk_TemPai_CheckedChanged(object sender, System.EventArgs e)
+        private void Chk_TemPai_CheckedChanged(object sender, EventArgs e)
         {
             if (Chk_TemPai.Checked)
             {
@@ -81,12 +83,12 @@ namespace WindowsForms
             }
         }
 
-        private void newToolStripButton_Click(object sender, System.EventArgs e)
+        private void newToolStripButton_Click(object sender, EventArgs e)
         {
             try
             {
                 Cliente.Unit c = new Cliente.Unit();
-                c.Id = Txt_Codigo.Text;
+                c = leituraFormulario();
                 c.ValidaClasse();
                 MessageBox.Show("Classe foi inicializada sem erros", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -96,24 +98,80 @@ namespace WindowsForms
             }
         }
 
-        private void openToolStripButton_Click(object sender, System.EventArgs e)
+        private void openToolStripButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Efetuei um clique sobre o botão Abrir");
         }
 
-        private void saveToolStripButton_Click(object sender, System.EventArgs e)
+        private void saveToolStripButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Efetuei um clique sobre o botão Salvar");
         }
 
-        private void ApagaToolStripButton1_Click(object sender, System.EventArgs e)
+        private void ApagaToolStripButton1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Efetuei um clique sobre o botão Excluir");
         }
 
-        private void LimparToolStripButton1_Click(object sender, System.EventArgs e)
+        private void LimparToolStripButton1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Efetuei um clique sobre o botão Limpar");
+        }
+
+        private Cliente.Unit leituraFormulario()
+        {
+            Cliente.Unit c = new Cliente.Unit();
+            c.Id = Txt_Codigo.Text;
+            c.Nome = Txt_NomeCliente.Text;
+            c.NomeMae = Txt_NomeMae.Text;
+            c.NomePai = Txt_NomePai.Text;
+            c.TemPai = Chk_TemPai.Checked ? true : false;
+            c.Cpf = Txt_CPF.Text;
+            if (Rdb_Masculino.Checked)
+            {
+                c.Genero = 0;
+            }
+            else if (Rdb_Feminino.Checked)
+            {
+                c.Genero = 1;
+            }
+            else if (Rdb_Indefinido.Checked)
+            {
+                c.Genero = 2;
+            }
+
+            c.Cep = Txt_CEP.Text;
+            c.Logradouro = Txt_Logradouro.Text;
+            c.Complemento = Txt_Complemento.Text;
+            c.Cidade = Txt_Cidade.Text;
+            c.Bairro = Txt_Bairro.Text;
+
+            if (Cmb_Estados.SelectedIndex < 0)
+            {
+                c.Estado = string.Empty;
+            }
+            else
+            {
+                c.Estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
+            }
+
+            c.Telefone = Txt_Telefone.Text;
+            c.Profissao = Txt_Profissao.Text;
+
+            if (Information.IsNumeric(Txt_RendaFamiliar.Text))
+            {
+                double vRenda = Convert.ToDouble(Txt_RendaFamiliar.Text);
+                if (vRenda > 0)
+                {
+                    c.RendaFamiliar = 0;
+                }
+                else
+                {
+                    c.RendaFamiliar = vRenda;
+                }
+            }
+
+            return c;
         }
     }
 }
