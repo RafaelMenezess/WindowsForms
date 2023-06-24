@@ -179,5 +179,19 @@ namespace WindowsForms
 
             return c;
         }
+
+        private void Txt_CEP_Leave(object sender, EventArgs e)
+        {
+            string vCep = Txt_CEP.Text;
+            if (vCep != string.Empty && vCep.Length == 8 && Information.IsNumeric(vCep))
+            {
+                var vJson = Cls_Uteis.GeraJSONCEP(vCep);
+                var cep = Cep.DesSerializedClassUnit(vJson);
+                Txt_Logradouro.Text = cep.logradouro;
+                Txt_Bairro.Text = cep.bairro;
+                Txt_Cidade.Text = cep.localidade;
+            }
+
+        }
     }
 }
