@@ -72,6 +72,28 @@ namespace WindowsForms
             Tls_Principal.Items[4].ToolTipText = "Limpa dados da tela da entrada de dados";
         }
 
+        private void LimparFormulario()
+        {
+            Txt_Bairro.Text = string.Empty;
+            Txt_CEP.Text = string.Empty;
+            Txt_Complemento.Text = string.Empty;
+            Txt_CPF.Text = string.Empty;
+            Cmb_Estados.SelectedIndex = -1;
+            Txt_Logradouro.Text = string.Empty;
+            Txt_NomeCliente.Text = string.Empty;
+            Txt_NomeMae.Text = string.Empty;
+            Txt_NomePai.Text = string.Empty;
+            Txt_Profissao.Text = string.Empty;
+            Txt_RendaFamiliar.Text = string.Empty;
+            Txt_Telefone.Text = string.Empty;
+            Txt_Cidade.Text = string.Empty;
+            Txt_Codigo.Text = string.Empty;
+            Chk_TemPai.Checked = false;
+            Rdb_Masculino.Checked = false;
+            Rdb_Feminino.Checked = false;
+            Rdb_Indefinido.Checked = false;
+        }
+
         private void Chk_TemPai_CheckedChanged(object sender, EventArgs e)
         {
             if (Chk_TemPai.Checked)
@@ -121,7 +143,7 @@ namespace WindowsForms
 
         private void LimparToolStripButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão Limpar");
+            LimparFormulario();
         }
 
         private Cliente.Unit leituraFormulario()
