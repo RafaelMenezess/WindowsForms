@@ -114,7 +114,9 @@ namespace WindowsForms
                 c = leituraFormulario();
                 c.ValidaClasse();
                 c.ValidaComplemento();
-                MessageBox.Show("Classe foi inicializada sem erros", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string clienteJson = Cliente.SerializedClassUnit(c);
+
+                MessageBox.Show("Cliente vai ser incluido. O conteudo será: " + clienteJson, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ValidationException ex)
             {
