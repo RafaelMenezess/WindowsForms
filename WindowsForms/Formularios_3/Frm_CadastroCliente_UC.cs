@@ -190,8 +190,17 @@ namespace WindowsForms
                 Txt_Logradouro.Text = cep.logradouro;
                 Txt_Bairro.Text = cep.bairro;
                 Txt_Cidade.Text = cep.localidade;
-            }
 
+                Cmb_Estados.SelectedIndex = -1;
+                for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+                {
+                    var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + cep.uf + ")");
+                    if (vPos > 0)
+                    {
+                        Cmb_Estados.SelectedIndex = i;
+                    }
+                }
+            }
         }
     }
 }
