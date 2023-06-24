@@ -1,4 +1,5 @@
 ﻿using CursoWindownsFormsBiblioteca.Classes;
+using CursoWindownsFormsBiblioteca.DataBases;
 using CursoWindowsFormsBiblioteca;
 using Microsoft.VisualBasic;
 using System;
@@ -116,7 +117,15 @@ namespace WindowsForms
                 c.ValidaComplemento();
                 string clienteJson = Cliente.SerializedClassUnit(c);
 
-                MessageBox.Show("Cliente vai ser incluido. O conteudo será: " + clienteJson, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                if (f.status)
+                {
+                    MessageBox.Show("Ok: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (ValidationException ex)
             {
