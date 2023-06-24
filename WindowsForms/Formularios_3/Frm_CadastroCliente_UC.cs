@@ -120,7 +120,15 @@ namespace WindowsForms
                 Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
                 if (f.status)
                 {
-                    MessageBox.Show("Ok: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    f.Incluir(c.Id, clienteJson);
+                    if (f.status)
+                    {
+                        MessageBox.Show("Ok: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -139,7 +147,23 @@ namespace WindowsForms
 
         private void openToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão Abrir");
+            if (Txt_Codigo.Text == string.Empty)
+            {
+                MessageBox.Show("Código do cliente vazio", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                if (f.status)
+                {
+                    string clienteJson = f.Buscar(Txt_Codigo.Text);
+                    MessageBox.Show(clienteJson);
+                }
+                else
+                {
+                    MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
