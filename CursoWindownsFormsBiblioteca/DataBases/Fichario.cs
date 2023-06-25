@@ -79,5 +79,29 @@ namespace CursoWindownsFormsBiblioteca.DataBases
 
             return string.Empty;
         }
+
+        public void Apagar(string id)
+        {
+            status = true;
+            try
+            {
+                if (!(File.Exists(diretorio + "\\" + id + ".json")))
+                {
+                    status = false;
+                    mensagem = "Indentificador não existe: " + id;
+                }
+                else
+                {
+                    File.Delete(diretorio + "\\" + id + ".json");
+                    status = true;
+                    mensagem = "Exclusão efetuado com sucesso. Identificador: " + id;
+                }
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = "Erro ao buscar o conteúdo do identificador erro: " + ex.Message;
+            }
+        }
     }
 }

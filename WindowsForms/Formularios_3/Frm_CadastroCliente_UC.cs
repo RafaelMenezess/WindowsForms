@@ -175,7 +175,30 @@ namespace WindowsForms
 
         private void ApagaToolStripButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão Excluir");
+            if (Txt_Codigo.Text == string.Empty)
+            {
+                MessageBox.Show("Código do cliente vazio", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                if (f.status)
+                {
+                    f.Apagar(Txt_Codigo.Text);
+                    if (f.status)
+                    {
+                        MessageBox.Show("Ok: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void LimparToolStripButton1_Click(object sender, EventArgs e)
