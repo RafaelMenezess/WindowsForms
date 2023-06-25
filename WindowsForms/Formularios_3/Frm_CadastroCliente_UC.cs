@@ -157,7 +157,9 @@ namespace WindowsForms
                 if (f.status)
                 {
                     string clienteJson = f.Buscar(Txt_Codigo.Text);
-                    MessageBox.Show(clienteJson);
+                    Cliente.Unit c = new Cliente.Unit();
+                    c = Cliente.DesSerializedClassUnit(clienteJson);
+                    EscreveFormulario(c);
                 }
                 else
                 {
@@ -235,6 +237,62 @@ namespace WindowsForms
             }
 
             return c;
+        }
+        private void EscreveFormulario(Cliente.Unit c)
+        {
+            Txt_Codigo.Text = c.Id;
+            Txt_NomeCliente.Text = c.Nome;
+            Txt_NomeMae.Text = c.NomeMae;
+            Txt_NomePai.Text = c.NomePai;
+            Txt_CPF.Text = c.Cpf;
+
+            if (c.NaoTemPai == true)
+            {
+                Chk_TemPai.Checked = true;
+                Txt_NomePai.Text = string.Empty;
+            }
+            else
+            {
+                Chk_TemPai.Checked = false;
+                Txt_NomePai.Text = c.NomePai;
+            }
+
+            if (c.Genero == 0)
+            {
+                Rdb_Masculino.Checked = true;
+            }
+            else if (c.Genero == 1)
+            {
+                Rdb_Feminino.Checked = true;
+            }
+            else if (c.Genero == 2)
+            {
+                Rdb_Indefinido.Checked = true;
+            }
+
+            Txt_CEP.Text = c.Cep;
+            Txt_Logradouro.Text = c.Logradouro;
+            Txt_Complemento.Text = c.Complemento;
+            Txt_Cidade.Text = c.Cidade;
+            Txt_Bairro.Text = c.Bairro;
+            Txt_Telefone.Text = c.Telefone;
+            Txt_Profissao.Text = c.Profissao;
+            Txt_RendaFamiliar.Text = c.RendaFamiliar.ToString();
+
+            if (c.Estado == string.Empty)
+            {
+                Cmb_Estados.SelectedIndex = -1;
+            }
+            else
+            {
+                for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+                {
+                    if (c.Estado == Cmb_Estados.Items[i].ToString())
+                    {
+                        Cmb_Estados.SelectedIndex = i;
+                    }
+                }
+            }
         }
 
         private void Txt_CEP_Leave(object sender, EventArgs e)
