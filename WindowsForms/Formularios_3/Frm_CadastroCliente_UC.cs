@@ -184,14 +184,25 @@ namespace WindowsForms
                 Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
                 if (f.status)
                 {
-                    f.Apagar(Txt_Codigo.Text);
-                    if (f.status)
+                    string clienteJson = f.Buscar(Txt_Codigo.Text);
+                    Cliente.Unit c = new Cliente.Unit();
+                    c = Cliente.DesSerializedClassUnit(clienteJson);
+                    EscreveFormulario(c);
+
+                    Frm_Questao db = new Frm_Questao("icons8-question-96", "Você quer excluir o cliente?");
+                    db.ShowDialog();
+                    if (db.DialogResult == DialogResult.Yes)
                     {
-                        MessageBox.Show("Ok: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        f.Apagar(Txt_Codigo.Text);
+                        if (f.status)
+                        {
+                            MessageBox.Show("Ok: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LimparFormulario();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 else
