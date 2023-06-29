@@ -103,5 +103,29 @@ namespace CursoWindownsFormsBiblioteca.DataBases
                 mensagem = "Erro ao buscar o conteúdo do identificador erro: " + ex.Message;
             }
         }
+        public void Alterar(string id, string jsonUnit)
+        {
+            status = true;
+            try
+            {
+                if (!(File.Exists(diretorio + "\\" + id + ".json")))
+                {
+                    status = false;
+                    mensagem = "Alteração não permitida porque o identificador já existe: " + id;
+                }
+                else
+                {
+                    File.Delete(diretorio + "\\" + id + ".json");
+                    File.WriteAllText(diretorio + "\\" + id + ".json", jsonUnit);
+                    status = true;
+                    mensagem = "Alteração efetuada com sucesso. Identificador: " + id;
+                }
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = "Conexão com o Fichario com erro: " + ex.Message;
+            }
+        }
     }
 }

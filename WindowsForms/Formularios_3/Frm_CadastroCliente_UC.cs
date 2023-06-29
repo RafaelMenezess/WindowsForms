@@ -170,7 +170,47 @@ namespace WindowsForms
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão Salvar");
+            if (Txt_Codigo.Text == string.Empty)
+            {
+                MessageBox.Show("Código do cliente vazio", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    Cliente.Unit c = new Cliente.Unit();
+                    c = leituraFormulario();
+                    c.ValidaClasse();
+                    c.ValidaComplemento();
+                    string clienteJson = Cliente.SerializedClassUnit(c);
+
+                    Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                    if (f.status)
+                    {
+                        f.Alterar(c.Id, clienteJson);
+                        if (f.status)
+                        {
+                            MessageBox.Show("Ok: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (ValidationException ex)
+                {
+                    MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void ApagaToolStripButton1_Click(object sender, EventArgs e)
@@ -260,7 +300,7 @@ namespace WindowsForms
             if (Information.IsNumeric(Txt_RendaFamiliar.Text))
             {
                 double vRenda = Convert.ToDouble(Txt_RendaFamiliar.Text);
-                if (vRenda > 0)
+                if (vRenda < 0)
                 {
                     c.RendaFamiliar = 0;
                 }
