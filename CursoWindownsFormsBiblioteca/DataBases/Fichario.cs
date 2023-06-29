@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace CursoWindownsFormsBiblioteca.DataBases
@@ -78,6 +79,27 @@ namespace CursoWindownsFormsBiblioteca.DataBases
             }
 
             return string.Empty;
+        }
+        public List<string> BuscarTodos()
+        {
+            status = true;
+            List<string> list = new List<string>();
+            try
+            {
+                var Arquivos = Directory.GetFiles(diretorio, "*.json");
+                for (int i = 0; i <= Arquivos.Length - 1; i++)
+                {
+                    string conteudo = File.ReadAllText(Arquivos[i]);
+                    list.Add(conteudo);
+                }
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = "Erro ao buscar o conteúdo do identificador erro: " + ex.Message;
+            }
+
+            return list;
         }
 
         public void Apagar(string id)

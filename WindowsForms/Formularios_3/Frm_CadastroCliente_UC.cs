@@ -3,6 +3,7 @@ using CursoWindownsFormsBiblioteca.DataBases;
 using CursoWindowsFormsBiblioteca;
 using Microsoft.VisualBasic;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
 
@@ -396,8 +397,21 @@ namespace WindowsForms
 
         private void Btn_Busca_Click(object sender, EventArgs e)
         {
-            Frm_Busca f = new Frm_Busca();
-            f.ShowDialog();
+            Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+            if (f.status)
+            {
+                List<string> list = new List<string>();
+                list = f.BuscarTodos();
+
+
+                Frm_Busca form = new Frm_Busca();
+                form.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
