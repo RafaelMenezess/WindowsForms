@@ -37,6 +37,8 @@ namespace WindowsForms
             Rdb_Feminino.Text = "Feminino";
             Rdb_Indefinido.Text = "Indefinido";
 
+            Btn_Busca.Text = "Buscar";
+
             Cmb_Estados.Items.Clear();
             Cmb_Estados.Items.Add("Acre (AC)");
             Cmb_Estados.Items.Add("Alagoas(AL)");
@@ -390,6 +392,12 @@ namespace WindowsForms
                     }
                 }
             }
+        }
+
+        private void Btn_Busca_Click(object sender, EventArgs e)
+        {
+            Frm_Busca f = new Frm_Busca();
+            f.ShowDialog();
         }
     }
 }
