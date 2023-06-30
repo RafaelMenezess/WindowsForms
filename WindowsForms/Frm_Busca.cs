@@ -1,10 +1,11 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace WindowsForms
 {
     public partial class Frm_Busca : Form
     {
-        public Frm_Busca()
+        public Frm_Busca(List<List<string>> listBusca)
         {
             InitializeComponent();
 

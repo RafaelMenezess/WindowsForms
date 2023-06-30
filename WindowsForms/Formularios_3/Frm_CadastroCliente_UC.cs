@@ -403,10 +403,21 @@ namespace WindowsForms
                 List<string> list = new List<string>();
                 list = f.BuscarTodos();
 
-
-                Frm_Busca form = new Frm_Busca();
-                form.ShowDialog();
-
+                if (list.Count > 0)
+                {
+                    List<List<string>> listBusca = new List<List<string>>();
+                    for (int i = 0; i <= list.Count - 1; i++)
+                    {
+                        Cliente.Unit c = Cliente.DesSerializedClassUnit(list[i]);
+                        listBusca.Add(new List<string> { c.Id, c.Nome });
+                    }
+                    Frm_Busca form = new Frm_Busca(listBusca);
+                    form.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao realizar a busca.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
