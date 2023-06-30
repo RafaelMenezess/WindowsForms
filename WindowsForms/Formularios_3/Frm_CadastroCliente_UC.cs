@@ -413,6 +413,14 @@ namespace WindowsForms
                     }
                     Frm_Busca form = new Frm_Busca(listBusca);
                     form.ShowDialog();
+                    if (form.DialogResult == DialogResult.OK)
+                    {
+                        var IdSelect = form.idSelect;
+                        string clienteJson = f.Buscar(IdSelect);
+                        Cliente.Unit c = new Cliente.Unit();
+                        c = Cliente.DesSerializedClassUnit(clienteJson);
+                        EscreveFormulario(c);
+                    }
                 }
                 else
                 {
