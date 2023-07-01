@@ -21,6 +21,8 @@ namespace WindowsForms
             Tls_Principal.Items[1].ToolTipText = "Fechar a seleção";
 
             PreencherLista();
+
+            Lst_busca.Sorted = true;
         }
 
         private void PreencherLista()
@@ -29,7 +31,10 @@ namespace WindowsForms
 
             for (int i = 0; i <= _listBusca.Count - 1; i++)
             {
-                Lst_busca.Items.Add(_listBusca[i][1]);
+                ItemBox x = new ItemBox();
+                x.Id = _listBusca[i][0];
+                x.Nome = _listBusca[i][1];
+                Lst_busca.Items.Add(x);
             }
         }
 
@@ -42,8 +47,20 @@ namespace WindowsForms
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
-            idSelect = _listBusca[Lst_busca.SelectedIndex][0];
+            ItemBox itemSelecionado = (ItemBox)Lst_busca.Items[Lst_busca.SelectedIndex];
+            idSelect = itemSelecionado.Id;
             this.Close();
+        }
+
+        public class ItemBox
+        {
+            public string Id { get; set; }
+            public string Nome { get; set; }
+
+            public override string ToString()
+            {
+                return Nome;
+            }
         }
     }
 }
