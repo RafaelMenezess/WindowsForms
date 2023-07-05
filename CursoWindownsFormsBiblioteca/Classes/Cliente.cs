@@ -110,10 +110,10 @@ namespace CursoWindownsFormsBiblioteca.Classes
             }
 
             #region "CRUD do Fichario"
-            public void IncluirFichario(string Conexao)
+            public void IncluirFichario(string conexao)
             {
                 string clienteJson = Cliente.SerializedClassUnit(this);
-                Fichario f = new Fichario(Conexao);
+                Fichario f = new Fichario(conexao);
                 if (f.status)
                 {
                     f.Incluir(this.Id, clienteJson);
@@ -127,6 +127,20 @@ namespace CursoWindownsFormsBiblioteca.Classes
                     throw new Exception(f.mensagem);
                 }
 
+            }
+
+            public Unit BuscarFichario(string id, string conexao)
+            {
+                Fichario f = new Fichario(conexao);
+                if (f.status)
+                {
+                    string clienteJson = f.Buscar(id);
+                    return Cliente.DesSerializedClassUnit(clienteJson);
+                }
+                else
+                {
+                    throw new Exception(f.mensagem);
+                }
             }
 
             #endregion

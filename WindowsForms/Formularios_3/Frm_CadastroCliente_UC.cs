@@ -140,18 +140,29 @@ namespace WindowsForms
             }
             else
             {
-                Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
-                if (f.status)
+                try
                 {
-                    string clienteJson = f.Buscar(Txt_Codigo.Text);
                     Cliente.Unit c = new Cliente.Unit();
-                    c = Cliente.DesSerializedClassUnit(clienteJson);
+                    c = c.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
                     EscreveFormulario(c);
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                //Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                //if (f.status)
+                //{
+                //    string clienteJson = f.Buscar(Txt_Codigo.Text);
+                //    Cliente.Unit c = new Cliente.Unit();
+                //    c = Cliente.DesSerializedClassUnit(clienteJson);
+                //    EscreveFormulario(c);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
         }
 
