@@ -118,25 +118,9 @@ namespace WindowsForms
                 c = leituraFormulario();
                 c.ValidaClasse();
                 c.ValidaComplemento();
-                string clienteJson = Cliente.SerializedClassUnit(c);
+                c.IncluirFichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                MessageBox.Show("Ok: Identificador incluido com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
-                if (f.status)
-                {
-                    f.Incluir(c.Id, clienteJson);
-                    if (f.status)
-                    {
-                        MessageBox.Show("Ok: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
             }
             catch (ValidationException ex)
             {
@@ -317,6 +301,7 @@ namespace WindowsForms
         }
         private void EscreveFormulario(Cliente.Unit c)
         {
+
             Txt_Codigo.Text = c.Id;
             Txt_NomeCliente.Text = c.Nome;
             Txt_NomeMae.Text = c.NomeMae;
@@ -370,6 +355,7 @@ namespace WindowsForms
                     }
                 }
             }
+
         }
 
         private void Txt_CEP_Leave(object sender, EventArgs e)

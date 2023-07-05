@@ -1,4 +1,5 @@
-﻿using CursoWindowsFormsBiblioteca;
+﻿using CursoWindownsFormsBiblioteca.DataBases;
+using CursoWindowsFormsBiblioteca;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -107,6 +108,28 @@ namespace CursoWindownsFormsBiblioteca.Classes
                     throw new Exception("Cpf Inválido");
                 }
             }
+
+            #region "CRUD do Fichario"
+            public void IncluirFichario(string Conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                Fichario f = new Fichario(Conexao);
+                if (f.status)
+                {
+                    f.Incluir(this.Id, clienteJson);
+                    if (!(f.status))
+                    {
+                        throw new Exception(f.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(f.mensagem);
+                }
+
+            }
+
+            #endregion
         }
 
         public class List
