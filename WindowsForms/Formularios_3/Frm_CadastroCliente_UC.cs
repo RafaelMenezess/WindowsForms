@@ -191,34 +191,41 @@ namespace WindowsForms
             }
             else
             {
-                Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
-                if (f.status)
-                {
-                    string clienteJson = f.Buscar(Txt_Codigo.Text);
-                    Cliente.Unit c = new Cliente.Unit();
-                    c = Cliente.DesSerializedClassUnit(clienteJson);
-                    EscreveFormulario(c);
+                Cliente.Unit c = new Cliente.Unit();
+                c = c.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                EscreveFormulario(c);
 
-                    Frm_Questao db = new Frm_Questao("icons8-question-96", "Você quer excluir o cliente?");
-                    db.ShowDialog();
-                    if (db.DialogResult == DialogResult.Yes)
-                    {
-                        f.Apagar(Txt_Codigo.Text);
-                        if (f.status)
-                        {
-                            MessageBox.Show("Ok: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LimparFormulario();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-                else
+                //Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                //if (f.status)
+                //{
+                //    string clienteJson = f.Buscar(Txt_Codigo.Text);
+                //    Cliente.Unit c = new Cliente.Unit();
+                //    c = Cliente.DesSerializedClassUnit(clienteJson);
+                //    EscreveFormulario(c);
+
+                Frm_Questao db = new Frm_Questao("icons8-question-96", "Você quer excluir o cliente?");
+                db.ShowDialog();
+                if (db.DialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    c.ApagarFichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                    MessageBox.Show("Ok: Identificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //f.Apagar(Txt_Codigo.Text);
+                    //if (f.status)
+                    //{
+                    //    MessageBox.Show("Ok: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       LimparFormulario();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //}
                 }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
         }
 
