@@ -160,6 +160,26 @@ namespace CursoWindownsFormsBiblioteca.Classes
                     throw new Exception(f.mensagem);
                 }
             }
+
+            public void ApagarFichario(string conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                Fichario f = new Fichario(conexao);
+                if (f.status)
+                {
+                    f.Apagar(this.Id);
+                    if (!(f.status))
+                    {
+                        throw new Exception(f.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(f.mensagem);
+                }
+
+            }
+
             #endregion
         }
 
