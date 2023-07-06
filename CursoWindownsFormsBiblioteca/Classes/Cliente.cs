@@ -143,6 +143,23 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 }
             }
 
+            public void AlterarFichario(string conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                Fichario f = new Fichario(conexao);
+                if (f.status)
+                {
+                    f.Alterar(this.Id, clienteJson);
+                    if (!(f.status))
+                    {
+                        throw new Exception(f.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(f.mensagem);
+                }
+            }
             #endregion
         }
 

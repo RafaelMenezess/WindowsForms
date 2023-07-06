@@ -2,9 +2,11 @@
 using CursoWindownsFormsBiblioteca.DataBases;
 using CursoWindowsFormsBiblioteca;
 using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Security.AccessControl;
 using System.Windows.Forms;
 
 namespace WindowsForms
@@ -150,19 +152,6 @@ namespace WindowsForms
                 {
                     MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                //Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
-                //if (f.status)
-                //{
-                //    string clienteJson = f.Buscar(Txt_Codigo.Text);
-                //    Cliente.Unit c = new Cliente.Unit();
-                //    c = Cliente.DesSerializedClassUnit(clienteJson);
-                //    EscreveFormulario(c);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
             }
         }
 
@@ -180,25 +169,8 @@ namespace WindowsForms
                     c = leituraFormulario();
                     c.ValidaClasse();
                     c.ValidaComplemento();
-                    string clienteJson = Cliente.SerializedClassUnit(c);
-
-                    Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
-                    if (f.status)
-                    {
-                        f.Alterar(c.Id, clienteJson);
-                        if (f.status)
-                        {
-                            MessageBox.Show("Ok: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    c.AlterarFichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                    MessageBox.Show("Ok: Identificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ValidationException ex)
                 {
