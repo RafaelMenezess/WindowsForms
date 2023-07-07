@@ -1,5 +1,4 @@
 ﻿using CursoWindownsFormsBiblioteca.Classes;
-using CursoWindownsFormsBiblioteca.DataBases;
 using CursoWindowsFormsBiblioteca;
 using Microsoft.VisualBasic;
 using System;
@@ -362,39 +361,42 @@ namespace WindowsForms
 
         private void Btn_Busca_Click(object sender, EventArgs e)
         {
-            Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
-            if (f.status)
-            {
-                List<string> list = new List<string>();
-                list = f.BuscarTodos();
 
-                if (list.Count > 0)
+            try
+            {
+                Cliente.Unit c = new Cliente.Unit();
+                List<string> list = new List<string>();
+                list = c.ListaFichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+
+                if (list == null)
                 {
-                    List<List<string>> listBusca = new List<List<string>>();
-                    for (int i = 0; i <= list.Count - 1; i++)
+                    MessageBox.Show("Base de dados esta vazia. Não existe nenhum identificador cadastrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                List<List<string>> listBusca = new List<List<string>>();
+                for (int i = 0; i <= list.Count - 1; i++)
+                {
+                    c = Cliente.DesSerializedClassUnit(list[i]);
+                    listBusca.Add(new List<string> { c.Id, c.Nome });
+                }
+                Frm_Busca form = new Frm_Busca(listBusca);
+                form.ShowDialog();
+                if (form.DialogResult == DialogResult.OK)
+                {
+                    var IdSelect = form.idSelect;
+                    c = c.BuscarFichario(IdSelect, "C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                    if (c == null)
                     {
-                        Cliente.Unit c = Cliente.DesSerializedClassUnit(list[i]);
-                        listBusca.Add(new List<string> { c.Id, c.Nome });
+                        MessageBox.Show("Identificador não foi encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    Frm_Busca form = new Frm_Busca(listBusca);
-                    form.ShowDialog();
-                    if (form.DialogResult == DialogResult.OK)
+                    else
                     {
-                        var IdSelect = form.idSelect;
-                        string clienteJson = f.Buscar(IdSelect);
-                        Cliente.Unit c = new Cliente.Unit();
-                        c = Cliente.DesSerializedClassUnit(clienteJson);
                         EscreveFormulario(c);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Erro ao realizar a busca.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + f.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

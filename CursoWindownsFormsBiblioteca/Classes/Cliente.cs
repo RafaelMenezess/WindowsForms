@@ -180,6 +180,19 @@ namespace CursoWindownsFormsBiblioteca.Classes
 
             }
 
+            public List<string> ListaFichario(string conexao)
+            {
+                Fichario f = new Fichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                if (f.status)
+                {
+                    List<string> todosJson = f.BuscarTodos();
+                    return todosJson;
+                }
+                else
+                {
+                    throw new Exception(f.mensagem);
+                }
+            }
             #endregion
         }
 
