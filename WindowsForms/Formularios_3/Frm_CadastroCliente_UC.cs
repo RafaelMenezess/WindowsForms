@@ -2,11 +2,9 @@
 using CursoWindownsFormsBiblioteca.DataBases;
 using CursoWindowsFormsBiblioteca;
 using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Security.AccessControl;
 using System.Windows.Forms;
 
 namespace WindowsForms
@@ -146,7 +144,14 @@ namespace WindowsForms
                 {
                     Cliente.Unit c = new Cliente.Unit();
                     c = c.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
-                    EscreveFormulario(c);
+                    if (c == null)
+                    {
+                        MessageBox.Show("Identificador não encontrado", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        EscreveFormulario(c);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -193,15 +198,22 @@ namespace WindowsForms
             {
                 Cliente.Unit c = new Cliente.Unit();
                 c = c.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
-                EscreveFormulario(c);
 
-                Frm_Questao db = new Frm_Questao("icons8-question-96", "Você quer excluir o cliente?");
-                db.ShowDialog();
-                if (db.DialogResult == DialogResult.Yes)
+                if (c == null)
                 {
-                    c.ApagarFichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
-                    MessageBox.Show("Ok: Identificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimparFormulario();
+                    MessageBox.Show("Identificador não encontrado", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    EscreveFormulario(c);
+                    Frm_Questao db = new Frm_Questao("icons8-question-96", "Você quer excluir o cliente?");
+                    db.ShowDialog();
+                    if (db.DialogResult == DialogResult.Yes)
+                    {
+                        c.ApagarFichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                        MessageBox.Show("Ok: Identificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimparFormulario();
+                    }
                 }
             }
         }
