@@ -9,7 +9,7 @@ namespace CursoWindownsFormsBiblioteca.DataBases
 
         public LocalDBClass()
         {
-            stringConn = "";
+            stringConn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Rafael\\source\\repos\\WindowsForms\\CursoWindownsFormsBiblioteca\\DataBases\\Fichario.mdf;Integrated Security=True";
             connDb = new SqlConnection(stringConn);
             connDb.Open();
         }
