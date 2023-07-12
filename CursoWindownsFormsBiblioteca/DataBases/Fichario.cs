@@ -7,8 +7,8 @@ namespace CursoWindownsFormsBiblioteca.DataBases
     public class Fichario
     {
         public string diretorio;
-        public string mensagem { get; set; }
-        public bool status { get; set; }
+        public string mensagem;
+        public bool status;
         public Fichario(string Diretorio)
         {
             status = true;
