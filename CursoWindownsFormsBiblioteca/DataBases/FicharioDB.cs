@@ -24,5 +24,22 @@ namespace CursoWindownsFormsBiblioteca.DataBases
                 mensagem = "Conexão tabela com erro: " + ex.Message;
             }
         }
+
+        public void Incluir(string id, string jsonUnit)
+        {
+            status = true;
+            try
+            {
+                var sql = "INSER INTO " + tabela + " (ID, JSON) VALUES ('" + id + "', '" + jsonUnit + "')";
+                db.SQLCommand(sql);
+                status = true;
+                mensagem = "Inclusão efetuado com sucesso. Identificador: " + id;
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = "Conexão com o Fichario com erro: " + ex.Message;
+            }
+        }
     }
 }
