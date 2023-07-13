@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace CursoWindownsFormsBiblioteca.DataBases
 {
@@ -70,6 +72,38 @@ namespace CursoWindownsFormsBiblioteca.DataBases
             }
 
             return string.Empty;
+        }
+
+        public List<string> BuscarTodos()
+        {
+            status = true;
+            List<string> list = new List<string>();
+            try
+            {
+                var sql = "SELECT ID, JSON FROM " + tabela;
+                var dt = db.SQLQuery(sql);
+
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i <= dt.Rows.Count - 1; i++)
+                    {
+                        string conteudo = dt.Rows[i]["JSON"].ToString();
+                        list.Add(conteudo);
+                    }
+                    return list;
+                }
+                else
+                {
+                    status = false;
+                    mensagem = "Não existem clientes na base de dados";
+                }
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = "Erro ao buscar o conteúdo do identificador erro: " + ex.Message;
+            }
+            return list;
         }
     }
 }
