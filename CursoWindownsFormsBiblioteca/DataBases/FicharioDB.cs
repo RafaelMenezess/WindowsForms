@@ -105,5 +105,33 @@ namespace CursoWindownsFormsBiblioteca.DataBases
             }
             return list;
         }
+
+        public void Apagar(string id)
+        {
+            status = true;
+            try
+            {
+                var sql = "SELECT ID, JSON FROM " + tabela + "WHERE ID = '" + id + "'";
+                var dt = db.SQLQuery(sql);
+
+                if (dt.Rows.Count > 0)
+                {
+                    sql = "DELET FROM " + tabela + "WHERE ID = '" + id + "'";
+                    db.SQLCommand(sql);
+                    status = true;
+                    mensagem = "Exclusão efetuado com sucesso. Identificador: " + id;
+                }
+                else
+                {
+                    status = false;
+                    mensagem = "Indentificador não existe: " + id;
+                }
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = "Erro ao buscar o conteúdo do identificador erro: " + ex.Message;
+            }
+        }
     }
 }
