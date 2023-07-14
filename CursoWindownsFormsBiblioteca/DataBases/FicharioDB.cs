@@ -133,5 +133,33 @@ namespace CursoWindownsFormsBiblioteca.DataBases
                 mensagem = "Erro ao buscar o conteúdo do identificador erro: " + ex.Message;
             }
         }
+
+        public void Alterar(string id, string jsonUnit)
+        {
+            status = true;
+            try
+            {
+                var sql = "SELECT ID, JSON FROM " + tabela + "WHERE ID = '" + id + "'";
+                var dt = db.SQLQuery(sql);
+
+                if (dt.Rows.Count > 0)
+                {
+                    sql = "UPDATE " + tabela + "SET JSON = '" + jsonUnit + "' WHERE ID = '" + id + "'";
+                    db.SQLCommand(sql);
+                    status = true;
+                    mensagem = "Alteração efetuada com sucesso. Identificador: " + id;
+                }
+                else
+                {
+                    status = false;
+                    mensagem = "Alteração não permitida porque o identificador não existe: " + id;
+                }
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = "Conexão com o Fichario com erro: " + ex.Message;
+            }
+        }
     }
 }

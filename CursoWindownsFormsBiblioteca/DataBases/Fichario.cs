@@ -133,7 +133,7 @@ namespace CursoWindownsFormsBiblioteca.DataBases
                 if (!(File.Exists(diretorio + "\\" + id + ".json")))
                 {
                     status = false;
-                    mensagem = "Alteração não permitida porque o identificador já existe: " + id;
+                    mensagem = "Alteração não permitida porque o identificador não existe: " + id;
                 }
                 else
                 {
