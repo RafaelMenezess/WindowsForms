@@ -117,9 +117,8 @@ namespace WindowsForms
                 c = leituraFormulario();
                 c.ValidaClasse();
                 c.ValidaComplemento();
-                c.IncluirFichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                c.IncluirFicharioDB("Cliente");
                 MessageBox.Show("Ok: Identificador incluido com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
             catch (ValidationException ex)
             {
@@ -142,7 +141,7 @@ namespace WindowsForms
                 try
                 {
                     Cliente.Unit c = new Cliente.Unit();
-                    c = c.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                    c = c.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
                     if (c == null)
                     {
                         MessageBox.Show("Identificador não encontrado", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -173,7 +172,7 @@ namespace WindowsForms
                     c = leituraFormulario();
                     c.ValidaClasse();
                     c.ValidaComplemento();
-                    c.AlterarFichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                    c.AlterarFicharioDB("Cliente");
                     MessageBox.Show("Ok: Identificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ValidationException ex)
@@ -196,7 +195,7 @@ namespace WindowsForms
             else
             {
                 Cliente.Unit c = new Cliente.Unit();
-                c = c.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                c = c.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
 
                 if (c == null)
                 {
@@ -209,7 +208,7 @@ namespace WindowsForms
                     db.ShowDialog();
                     if (db.DialogResult == DialogResult.Yes)
                     {
-                        c.ApagarFichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                        c.ApagarFicharioDB("Cliente");
                         MessageBox.Show("Ok: Identificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimparFormulario();
                     }
@@ -361,12 +360,11 @@ namespace WindowsForms
 
         private void Btn_Busca_Click(object sender, EventArgs e)
         {
-
             try
             {
                 Cliente.Unit c = new Cliente.Unit();
                 List<string> list = new List<string>();
-                list = c.ListaFichario("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                list = c.ListaFicharioDB("Cliente");
 
                 if (list == null)
                 {
@@ -383,7 +381,7 @@ namespace WindowsForms
                 if (form.DialogResult == DialogResult.OK)
                 {
                     var IdSelect = form.idSelect;
-                    c = c.BuscarFichario(IdSelect, "C:\\Users\\Rafael\\source\\repos\\WindowsForms\\Fichario");
+                    c = c.BuscarFicharioDB(IdSelect, "Cliente");
                     if (c == null)
                     {
                         MessageBox.Show("Identificador não foi encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
