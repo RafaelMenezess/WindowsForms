@@ -32,7 +32,7 @@ namespace CursoWindownsFormsBiblioteca.DataBases
             status = true;
             try
             {
-                var sql = "INSER INTO " + tabela + " (ID, JSON) VALUES ('" + id + "', '" + jsonUnit + "')";
+                var sql = "INSERT INTO " + tabela + " (ID, JSON) VALUES ('" + id + "', '" + jsonUnit + "')";
                 db.SQLCommand(sql);
                 status = true;
                 mensagem = "Inclusão efetuado com sucesso. Identificador: " + id;

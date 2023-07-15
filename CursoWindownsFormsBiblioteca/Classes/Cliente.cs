@@ -264,13 +264,27 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 }
             }
 
-            public List<string> ListaFicharioDB(string conexao)
+            public List<List<string>> ListaFicharioDB(string conexao)
             {
-                FicharioDB f = new FicharioDB("C:\\Users\\Rafael\\source\\repos\\WindowsForms\\FicharioDB");
+                FicharioDB f = new FicharioDB(conexao);
                 if (f.status)
                 {
-                    List<string> todosJson = f.BuscarTodos();
-                    return todosJson;
+                    List<string> List = new List<string>();
+                    List = f.BuscarTodos();
+                    if (f.status)
+                    {
+                        List<List<string>> ListaBusca = new List<List<string>>();
+                        for (int i = 0; i <= List.Count - 1; i++)
+                        {
+                            Cliente.Unit C = Cliente.DesSerializedClassUnit(List[i]);
+                            ListaBusca.Add(new List<string> { C.Id, C.Nome });
+                        }
+                        return ListaBusca;
+                    }
+                    else
+                    {
+                        throw new Exception(f.mensagem);
+                    }
                 }
                 else
                 {

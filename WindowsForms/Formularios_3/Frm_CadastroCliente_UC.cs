@@ -363,28 +363,16 @@ namespace WindowsForms
             try
             {
                 Cliente.Unit c = new Cliente.Unit();
-                List<string> list = new List<string>();
-                list = c.ListaFicharioDB("Cliente");
-
-                if (list == null)
+                var list = c.ListaFicharioDB("Cliente");
+                Frm_Busca FForm = new Frm_Busca(list);
+                FForm.ShowDialog();
+                if (FForm.DialogResult == DialogResult.OK)
                 {
-                    MessageBox.Show("Base de dados esta vazia. Não existe nenhum identificador cadastrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                List<List<string>> listBusca = new List<List<string>>();
-                for (int i = 0; i <= list.Count - 1; i++)
-                {
-                    c = Cliente.DesSerializedClassUnit(list[i]);
-                    listBusca.Add(new List<string> { c.Id, c.Nome });
-                }
-                Frm_Busca form = new Frm_Busca(listBusca);
-                form.ShowDialog();
-                if (form.DialogResult == DialogResult.OK)
-                {
-                    var IdSelect = form.idSelect;
-                    c = c.BuscarFicharioDB(IdSelect, "Cliente");
+                    var idSelect = FForm.idSelect;
+                    c = c.BuscarFicharioDB(idSelect, "Cliente");
                     if (c == null)
                     {
-                        MessageBox.Show("Identificador não foi encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
