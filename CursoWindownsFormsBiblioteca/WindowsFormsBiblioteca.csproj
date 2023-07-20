@@ -70,6 +70,7 @@
     <Compile Include="Cls_Uteis.cs" />
     <Compile Include="DataBases\Fichario.cs" />
     <Compile Include="DataBases\FicharioDB.cs" />
+    <Compile Include="DataBases\FicharioSQLServer.cs" />
     <Compile Include="DataBases\LocalDBClass.cs" />
     <Compile Include="DataBases\SQLServerClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

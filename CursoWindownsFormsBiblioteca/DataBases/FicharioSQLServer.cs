@@ -3,19 +3,19 @@ using System.Collections.Generic;
 
 namespace CursoWindownsFormsBiblioteca.DataBases
 {
-    public class FicharioDB
+    public class FicharioSQLServer
     {
         public string mensagem;
         public bool status;
         public string tabela;
-        public LocalDBClass db;
+        public SQLServerClass db;
 
-        public FicharioDB(string Tabela)
+        public FicharioSQLServer(string Tabela)
         {
             status = true;
             try
             {
-                db = new LocalDBClass();
+                db = new SQLServerClass();
                 tabela = Tabela;
                 mensagem = "Conexão com a tabela criada com sucesso";
             }
