@@ -292,6 +292,104 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 }
             }
             #endregion
+
+            #region "CRUD do FicharioDB SQLServer"
+            public void IncluirFicharioSQL(string conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                FicharioSQLServer f = new FicharioSQLServer(conexao);
+                if (f.status)
+                {
+                    f.Incluir(this.Id, clienteJson);
+                    if (!(f.status))
+                    {
+                        throw new Exception(f.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(f.mensagem);
+                }
+            }
+
+            public Unit BuscarFicharioSQL(string id, string conexao)
+            {
+                FicharioSQLServer f = new FicharioSQLServer(conexao);
+                if (f.status)
+                {
+                    string clienteJson = f.Buscar(id);
+                    return Cliente.DesSerializedClassUnit(clienteJson);
+                }
+                else
+                {
+                    throw new Exception(f.mensagem);
+                }
+            }
+
+            public void AlterarFicharioSQL(string conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                FicharioSQLServer f = new FicharioSQLServer(conexao);
+                if (f.status)
+                {
+                    f.Alterar(this.Id, clienteJson);
+                    if (!(f.status))
+                    {
+                        throw new Exception(f.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(f.mensagem);
+                }
+            }
+
+            public void ApagarFicharioSQL(string conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                FicharioSQLServer f = new FicharioSQLServer(conexao);
+                if (f.status)
+                {
+                    f.Apagar(this.Id);
+                    if (!(f.status))
+                    {
+                        throw new Exception(f.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(f.mensagem);
+                }
+            }
+
+            public List<List<string>> ListaFicharioSQL(string conexao)
+            {
+                FicharioSQLServer f = new FicharioSQLServer(conexao);
+                if (f.status)
+                {
+                    List<string> List = new List<string>();
+                    List = f.BuscarTodos();
+                    if (f.status)
+                    {
+                        List<List<string>> ListaBusca = new List<List<string>>();
+                        for (int i = 0; i <= List.Count - 1; i++)
+                        {
+                            Cliente.Unit C = Cliente.DesSerializedClassUnit(List[i]);
+                            ListaBusca.Add(new List<string> { C.Id, C.Nome });
+                        }
+                        return ListaBusca;
+                    }
+                    else
+                    {
+                        throw new Exception(f.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(f.mensagem);
+                }
+            }
+            #endregion
         }
 
         public class List
