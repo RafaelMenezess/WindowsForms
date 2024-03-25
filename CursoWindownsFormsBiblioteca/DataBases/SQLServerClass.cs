@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 
 namespace CursoWindownsFormsBiblioteca.DataBases
@@ -18,7 +19,8 @@ namespace CursoWindownsFormsBiblioteca.DataBases
         {
             try
             {
-                stringConn = "Data Source=DESKTOP-1AMLFGM;Initial Catalog=ByteBank;Persist Security Info=True;User ID=sa;Password=123";
+                //stringConn = "Data Source=DESKTOP-1AMLFGM;Initial Catalog=ByteBank;Persist Security Info=True;User ID=sa;Password=123";
+                stringConn = ConfigurationManager.ConnectionStrings["Fichario"].ConnectionString;
                 connDb = new SqlConnection(stringConn);
                 connDb.Open();
             }
