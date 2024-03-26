@@ -228,7 +228,7 @@ namespace WindowsForms
             c.Nome = Txt_NomeCliente.Text;
             c.NomeMae = Txt_NomeMae.Text;
             c.NomePai = Txt_NomePai.Text;
-            c.NaoTemPai = Chk_TemPai.Checked ? true : false;
+            c.NaoTemPai = Chk_TemPai.Checked ? 1 : 0;
             c.Cpf = Txt_CPF.Text;
             if (Rdb_Masculino.Checked)
             {
@@ -285,7 +285,7 @@ namespace WindowsForms
             Txt_NomePai.Text = c.NomePai;
             Txt_CPF.Text = c.Cpf;
 
-            if (c.NaoTemPai == true)
+            if (c.NaoTemPai == 1)
             {
                 Chk_TemPai.Checked = true;
                 Txt_NomePai.Text = string.Empty;

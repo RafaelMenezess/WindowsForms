@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Text;
 
 namespace CursoWindownsFormsBiblioteca.Classes
@@ -27,7 +28,7 @@ namespace CursoWindownsFormsBiblioteca.Classes
             [Required(ErrorMessage = "Nome da Mãe é obrigatório")]
             [StringLength(50, ErrorMessage = "Nome da mãe deve ter  no máximo 50 caracteres")]
             public string NomeMae { get; set; }
-            public bool NaoTemPai { get; set; }
+            public int NaoTemPai { get; set; }
 
             [Required(ErrorMessage = "CPF é obrigatório")]
             [RegularExpression("([0-9]+)", ErrorMessage = "CPF do cliente so aceita valores numéricos")]
@@ -94,7 +95,7 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 {
                     throw new Exception("Nome do Pai e da Mãe não podem ser iguais");
                 }
-                if (this.NaoTemPai == false)
+                if (this.NaoTemPai == 0)
                 {
                     if (this.NomePai == string.Empty)
                     {
@@ -459,6 +460,30 @@ namespace CursoWindownsFormsBiblioteca.Classes
 
                 return Sql;
             }
+
+            public Unit DataRowToUnit(DataRow dr)
+            {
+                Unit u = new Unit();
+                u.Id = dr["Id"].ToString();
+                u.Nome = dr["Nome"].ToString();
+                u.NomePai = dr["NomePai"].ToString();
+                u.NomeMae = dr["NomeMae"].ToString();
+                u.NaoTemPai = Convert.ToInt32(dr["NaoTemPai"]);
+                u.Cpf = dr["Cpf"].ToString();
+                u.Genero = Convert.ToInt32(dr["Genero"]);
+                u.Cep = dr["Cep"].ToString();
+                u.Logradouro = dr["Logradouro"].ToString();
+                u.Complemento = dr["Complemento"].ToString();
+                u.Bairro = dr["Bairro"].ToString();
+                u.Cidade = dr["Cidade"].ToString();
+                u.Estado = dr["Estado"].ToString();
+                u.Telefone = dr["Telefone"].ToString();
+                u.Profissao = dr["Profissao"].ToString();
+                u.RendaFamiliar = Convert.ToDouble(dr["RendaFamiliar"]);
+
+                return u;
+            }
+
 
             #endregion
 
