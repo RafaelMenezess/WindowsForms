@@ -502,6 +502,33 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 }
             }
 
+            public Unit BuscarFicharioSql(string id)
+            {
+                try
+                {
+                    string sql = $"SELECT * FROM [TB_Cliente] Where Id = {id}";
+                    var db = new SQLServerClass();
+                    var dt = db.SQLQuery(sql);
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        db.CloseConn();
+                        throw new Exception($"Indentificador não existente : {id}");
+                    }
+                    else
+                    {
+                        Unit u = this.DataRowToUnit(dt.Rows[0]);
+                        return u;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao buscar conteúdo do identificador: " + ex.Message);
+                }
+            }
+
+
+
             #endregion
 
         }
