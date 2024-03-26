@@ -435,6 +435,31 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 return Sql;
             }
 
+            public string ToUpdate(string id)
+            {
+                string Sql = $@"UPDATE TB_Cliente
+                                SET
+                               (Id = '{Id}',
+                                Nome = '{Nome}',
+                                NomePai = '{NomePai}',
+                                NomeMae = '{NomeMae}',
+                                NaoTemPai =  {NaoTemPai},
+                                Cpf = '{Cpf}',
+                                Genero = {Genero},
+                                Cep = '{Cep}',
+                                Logradouro = '{Logradouro}',
+                                Complemento = '{Complemento}',
+                                Bairro = '{Bairro}',
+                                Cidade = '{Cidade}',
+                                Estado = '{Estado}',
+                                Telefone = '{Telefone}',
+                                Profissao = '{Profissao}',
+                                RendaFamiliar = '{RendaFamiliar}')
+                                WHERE Id = {id}";
+
+                return Sql;
+            }
+
             #endregion
 
             #endregion
