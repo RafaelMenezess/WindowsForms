@@ -487,6 +487,21 @@ namespace CursoWindownsFormsBiblioteca.Classes
 
             #endregion
 
+            public void IncluirFicharioSQLRel()
+            {
+                try
+                {
+                    string Sql = this.ToInsert();
+                    var db = new SQLServerClass();
+                    db.SQLCommand(Sql);
+                    db.CloseConn();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Inclusão não permitida. Identificador: " + this.Id + ", erro: " + ex.Message);
+                }
+            }
+
             #endregion
 
         }
