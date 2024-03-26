@@ -390,6 +390,55 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 }
             }
             #endregion
+
+            #region "CRUD do Fichcario SQLServer Relacional"
+
+            #region "Funções auxiliares"
+
+            public string ToInsert()
+            {
+                string Sql = $@"INSERT INTO TB_Cliente
+                               (Id,
+                                Nome,
+                                NomePai,
+                                NomeMae,
+                                NaoTemPai,
+                                Cpf,
+                                Genero,
+                                Cep,
+                                Logradouro,
+                                Complemento,
+                                Bairro,
+                                Cidade,
+                                Estado,
+                                Telefone,
+                                Profissao,
+                                RendaFamiliar)
+                                VALUES
+                               ('{Id}',
+                                '{Nome}',
+                                '{NomePai}',
+                                '{NomeMae}',
+                                 {NaoTemPai},
+                                '{Cpf}',
+                                 {Genero},
+                                '{Cep}',
+                                '{Logradouro}',
+                                '{Complemento}',
+                                '{Bairro}',
+                                '{Cidade}',
+                                '{Estado}',
+                                '{Telefone}',
+                                '{Profissao}',
+                                '{RendaFamiliar}')";
+
+                return Sql;
+            }
+
+            #endregion
+
+            #endregion
+
         }
 
         public class List
