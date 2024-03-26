@@ -502,11 +502,11 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 }
             }
 
-            public Unit BuscarFicharioSql(string id)
+            public Unit BuscarFicharioSQLRel(string id)
             {
                 try
                 {
-                    string sql = $"SELECT * FROM [TB_Cliente] Where Id = {id}";
+                    string sql = $"SELECT * FROM [TB_Cliente] Where Id = '{id}'";
                     var db = new SQLServerClass();
                     var dt = db.SQLQuery(sql);
 
@@ -527,6 +527,31 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 }
             }
 
+            public void AlterarFiccharioSQLRel()
+            {
+                try
+                {
+                    string sql = $"SELECT * FROM [TB_Cliente] Where Id = '{Id}'";
+                    var db = new SQLServerClass();
+                    var dt = db.SQLQuery(sql);
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        db.CloseConn();
+                        throw new Exception($"Indentificador não existente : {Id}");
+                    }
+                    else
+                    {
+                        sql = this.ToUpdate(this.Id);
+                        db.SQLCommand(sql);
+                        db.CloseConn();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao alterar conteúdo do identificador: " + ex.Message);
+                }
+            }
 
 
             #endregion
