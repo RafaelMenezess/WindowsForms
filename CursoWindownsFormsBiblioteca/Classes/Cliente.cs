@@ -64,7 +64,7 @@ namespace CursoWindownsFormsBiblioteca.Classes
             public string Estado { get; set; }
 
             [Required(ErrorMessage = "Telefone é obrigatório")]
-            [RegularExpression("([0-9]+)", ErrorMessage = "Telefone so aceita valores numéricos")]
+            //[RegularExpression("([0-9]+)", ErrorMessage = "Telefone so aceita valores numéricos")]
             public string Telefone { get; set; }
             public string Profissao { get; set; }
 
@@ -590,7 +590,7 @@ namespace CursoWindownsFormsBiblioteca.Classes
                     
                     db.CloseConn();
 
-                    for (int i = 0; i <= dt.Rows.Count; i++)
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         listaBusca.Add(new List<string> { dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Nome"].ToString() });
                     }
