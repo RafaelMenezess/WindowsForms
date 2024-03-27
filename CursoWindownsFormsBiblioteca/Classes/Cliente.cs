@@ -527,7 +527,7 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 }
             }
 
-            public void AlterarFiccharioSQLRel()
+            public void AlterarFicharioSQLRel()
             {
                 try
                 {
@@ -550,6 +550,32 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 catch (Exception ex)
                 {
                     throw new Exception("Erro ao alterar conteúdo do identificador: " + ex.Message);
+                }
+            }
+
+            public void ApagarFicharioSqlRel()
+            {
+                try
+                {
+                    string sql = $"SELECT * FROM [TB_Cliente] Where Id = '{this.Id}'";
+                    var db = new SQLServerClass();
+                    var dt = db.SQLQuery(sql);
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        db.CloseConn();
+                        throw new Exception($"Indentificador não existente : {Id}");
+                    }
+                    else
+                    {
+                        sql = $"DELETE FROM Tb_Cliente WHERE Id = '{this.Id}'";
+                        db.SQLCommand(sql);
+                        db.CloseConn();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao excluir conteúdo do identificador: " + ex.Message);
                 }
             }
 
