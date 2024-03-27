@@ -579,6 +579,30 @@ namespace CursoWindownsFormsBiblioteca.Classes
                 }
             }
 
+            public List<List<string>> BuscarFicharioDBTodosSqlRel()
+            {
+                List<List<string>> listaBusca = new List<List<string>>();
+                try
+                {
+                    string sql = "SELECT * FROM Tb_Cliente";
+                    SQLServerClass db = new SQLServerClass();
+                    DataTable dt = db.SQLQuery(sql);
+                    
+                    db.CloseConn();
+
+                    for (int i = 0; i <= dt.Rows.Count; i++)
+                    {
+                        listaBusca.Add(new List<string> { dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Nome"].ToString() });
+                    }
+
+                    return listaBusca;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Conexão ocasionou um erro: " + ex.Message);
+                }
+            }
+
 
             #endregion
 
