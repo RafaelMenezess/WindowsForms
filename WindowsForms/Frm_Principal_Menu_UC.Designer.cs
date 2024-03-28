@@ -46,6 +46,7 @@
             this.byteBankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agênciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.açõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirImagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -187,7 +188,8 @@
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clienteToolStripMenuItem});
+            this.clienteToolStripMenuItem,
+            this.agênciaToolStripMenuItem});
             this.cadastroToolStripMenuItem.Image = global::WindowsForms.Properties.Resources.Cadastros;
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
@@ -200,6 +202,14 @@
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
+            // 
+            // agênciaToolStripMenuItem
+            // 
+            this.agênciaToolStripMenuItem.Image = global::WindowsForms.Properties.Resources.icons8_bank_48;
+            this.agênciaToolStripMenuItem.Name = "agênciaToolStripMenuItem";
+            this.agênciaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agênciaToolStripMenuItem.Text = "Agência";
+            this.agênciaToolStripMenuItem.Click += new System.EventHandler(this.agênciaToolStripMenuItem_Click);
             // 
             // açõesToolStripMenuItem
             // 
@@ -290,5 +300,6 @@
         private System.Windows.Forms.ToolStripMenuItem byteBankToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agênciaToolStripMenuItem;
     }
 }

@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Frm_ValidaCPF21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\Frm_ValidaCPF2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="DeleteRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\DeleteRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExcluirBarra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\ExcluirBarra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="money" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,11 +136,14 @@
   <data name="Frm_Principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Frm_Principal.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_question_961" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\icons8-question-96.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Frm_ValidaCPF2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Frm_ValidaCPF2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DeleteLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\DeleteLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Frm_ValidaCPF21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Frm_ValidaCPF2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_key_96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\icons8-key-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,14 +151,14 @@
   <data name="Frm_HelloWorld" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Frm_HelloWorld.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LimparBarra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\LimparBarra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Frm_Mascara1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Frm_Mascara.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cadastros" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\Cadastros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Frm_DemonstracaoKey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Frm_DemonstracaoKey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,8 +175,8 @@
   <data name="Frm_ValidaCPF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Frm_ValidaCPF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DeleteAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\DeleteAll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cadastros" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Cadastros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DeleteTab" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\DeleteTab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,19 +184,19 @@
   <data name="Frm_ValidaCPF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Frm_ValidaCPF.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_question_961" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\icons8-question-96.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DeleteAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\DeleteAll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Frm_ValidaSenha1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\Frm_ValidaSenha.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DeleteLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\DeleteLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="money1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ExcluirBarra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\ExcluirBarra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Frm_ValidaSenha1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Frm_ValidaSenha.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LimparBarra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\LimparBarra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-bank-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\icons8-bank-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

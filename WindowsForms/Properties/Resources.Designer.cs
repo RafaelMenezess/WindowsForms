@@ -263,6 +263,16 @@ namespace WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_bank_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bank-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_key_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8_key_96", resourceCulture);

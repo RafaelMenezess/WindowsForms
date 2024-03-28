@@ -119,6 +119,12 @@
     <Compile Include="Formularios_3\Frm_MouseEventos.Designer.cs">
       <DependentUpon>Frm_MouseEventos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Agencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Agencia.Designer.cs">
+      <DependentUpon>Frm_Agencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Busca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,9 @@
     <EmbeddedResource Include="Formularios_3\Frm_MouseEventos.resx">
       <DependentUpon>Frm_MouseEventos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Agencia.resx">
+      <DependentUpon>Frm_Agencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Busca.resx">
       <DependentUpon>Frm_Busca.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +354,7 @@
     <Content Include="Imagens\Frm_ValidaSenha.ico" />
     <Content Include="Imagens\Frm_ValidaSenha.png" />
     <None Include="Imagens\icons8-key-96.png" />
+    <None Include="Imagens\icons8-bank-48.png" />
     <Content Include="Imagens\icons8-question-96.ico" />
     <Content Include="Imagens\icons8-question-96.png" />
   </ItemGroup>
