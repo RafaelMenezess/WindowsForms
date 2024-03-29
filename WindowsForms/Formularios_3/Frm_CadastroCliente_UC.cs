@@ -73,6 +73,13 @@ namespace WindowsForms
             Tls_Principal.Items[2].ToolTipText = "Atualize o cliente já existente";
             Tls_Principal.Items[3].ToolTipText = "Apaga o cliente selecionado";
             Tls_Principal.Items[4].ToolTipText = "Limpa dados da tela da entrada de dados";
+
+            Btn_Busca.Text = "Buscar";
+            Grp_DataGrid.Text = "Clientes";
+
+            AtualizaGrid();
+
+            LimparFormulario();
         }
 
         private void LimparFormulario()
@@ -120,6 +127,8 @@ namespace WindowsForms
                 //c.IncluirFicharioSQL("Cliente");
                 c.IncluirFicharioSQLRel();
                 MessageBox.Show("Ok: Identificador incluido com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                AtualizaGrid();
             }
             catch (ValidationException ex)
             {
@@ -177,6 +186,8 @@ namespace WindowsForms
                     //c.AlterarFicharioSQL("Cliente");
                     c.AlterarFicharioSQLRel();
                     MessageBox.Show("Ok: Identificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    AtualizaGrid();
                 }
                 catch (ValidationException ex)
                 {
@@ -215,6 +226,8 @@ namespace WindowsForms
                         //c.ApagarFicharioSQL("Cliente");
                         c.ApagarFicharioSqlRel();
                         MessageBox.Show("Ok: Identificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        AtualizaGrid();
                         LimparFormulario();
                     }
                 }
@@ -386,6 +399,30 @@ namespace WindowsForms
                         EscreveFormulario(c);
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AtualizaGrid()
+        {
+            try
+            {
+                Cliente.Unit c = new Cliente.Unit();
+                var list = c.BuscarFicharioDBTodosSqlRel();
+
+                Dg_Clientes.Rows.Clear();
+                
+                for (int i = 0; i <= list.Count; i++)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(Dg_Clientes);
+                    row.Cells[0].Value = list[i][0].ToString();
+                    row.Cells[1].Value = list[i][1].ToString();
+                    Dg_Clientes.Rows.Add(row);
+                }                
             }
             catch (Exception ex)
             {
