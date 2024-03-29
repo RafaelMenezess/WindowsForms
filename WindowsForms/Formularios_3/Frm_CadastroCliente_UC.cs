@@ -414,7 +414,7 @@ namespace WindowsForms
                 var list = c.BuscarFicharioDBTodosSqlRel();
 
                 Dg_Clientes.Rows.Clear();
-                
+
                 for (int i = 0; i <= list.Count; i++)
                 {
                     DataGridViewRow row = new DataGridViewRow();
@@ -422,7 +422,33 @@ namespace WindowsForms
                     row.Cells[0].Value = list[i][0].ToString();
                     row.Cells[1].Value = list[i][1].ToString();
                     Dg_Clientes.Rows.Add(row);
-                }                
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Dg_Clientes_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = Dg_Clientes.SelectedRows[0];
+                string Id = row.Cells[0].Value.ToString();
+
+                Cliente.Unit c = new Cliente.Unit();
+                 c = c.BuscarFicharioSQLRel(Id);
+
+                if (c == null)
+                {
+                    MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    EscreveFormulario(c);
+                }
             }
             catch (Exception ex)
             {
